@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.covid19sms">
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
 
         android:allowBackup="true"
@@ -20,5 +22,6 @@
         </activity>
         <activity android:name=".MainActivity" />
     </application>
+
 
 </manifest>
