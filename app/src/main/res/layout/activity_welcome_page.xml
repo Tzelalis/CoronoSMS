@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Info_UI"
     android:background="#FFFFFF"
+    android:layout_weight="6"
     >
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -19,7 +20,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:layout_marginTop="60dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="100dp"
         android:orientation="vertical"
         android:paddingLeft="30dp"
         android:paddingRight="30dp">
@@ -35,7 +38,7 @@
 
         <EditText
             android:id="@+id/et_name"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             style="@style/Widget.AppCompat.EditText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -52,7 +55,7 @@
             android:maxLines="1"
             android:inputType="text"
             android:scrollHorizontally="true"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:hint="@string/last_name_gr" />
 
         <EditText
@@ -61,26 +64,42 @@
             android:layout_width="match_parent"
             android:maxLines="1"
             android:inputType="text"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginTop="50dp"
             android:hint="@string/address_gr"
+
             />
 
-s        <Button
-            android:id="@+id/btn_save"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:background="@drawable/round"
-            android:textColor="@android:color/white"
-            android:onClick="write_to_pref"
-            android:shadowColor="@color/btn_shadow"
-            android:text="Αποθήκευση "
-            android:textSize="18sp"
+<!--        <Button-->
+<!--            android:id="@+id/btn_save"-->
+<!--            android:layout_width="220dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="70dp"-->
+<!--            android:background="@drawable/round"-->
+<!--            android:onClick="write_to_pref"-->
+<!--            android:shadowColor="@color/btn_shadow"-->
+<!--            android:text="Αποθήκευση "-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textSize="18sp"-->
 
+<!--            />-->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_save"
+            android:onClick="write_to_pref"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="50dp"
+            app:fabCustomSize="65dp"
+            app:srcCompat="@drawable/ic_foursquare_check_in"
+            app:backgroundTint="@android:color/holo_green_light"
+            app:rippleColor="@android:color/background_light"
             />
 
 
     </LinearLayout>
+
 
 </FrameLayout>
