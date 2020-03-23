@@ -32,6 +32,20 @@ public class MainActivity extends AppCompatActivity {
         personalInfos = new String[3];
 
 
+        String info = getIntent().getStringExtra("person_info");
+
+        //Log.v("covid19", info);
+
+        info = info.replace("\"","");
+        info = info.replace("[","");
+        info = info.replace("]","");
+
+         personalInfos = info.split(",");
+
+        //String s = parts[0] +" "+ parts[1]+" "+parts[2];
+        //Log.v("covid19", parts[0] +" "+ parts[1]+" "+parts[2]);
+        //Toast.makeText(this.getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+
         ActivityCompat.requestPermissions(MainActivity.this,
                 new String[]{Manifest.permission.SEND_SMS},
                 1);

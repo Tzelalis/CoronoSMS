@@ -39,7 +39,7 @@
             android:contentDescription="@string/option_icon_desc"
             android:paddingStart="16dp"
             android:paddingRight="16dp"
-            android:src="@mipmap/baseline_local_hospital_black_36" />
+            android:src="@mipmap/hospital" />
 
         <TextView
             android:id="@+id/textView"

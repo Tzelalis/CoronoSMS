@@ -9,4 +9,8 @@
     <string name="option4">Παροχή βοήθειας σε ανθρώπους που βρίσκονται σε ανάγκη</string>
     <string name="option5">Θρησκευτική τελετή, μετάβαση διαζευγμένων γονέων</string>
     <string name="option6">Σωματική άσκηση ή κίνηση με κατοικίδιο ζώο</string>
+    <string name="first_name_gr">Όνομα</string>
+    <string name="last_name_gr">Επώνυμο</string>
+    <string name="address_gr">Διεύθυνση</string>
+    <string name="err_toast_info_missing_gr">Συμπληρώστε όλα τα στοιχεία σας!</string>
 </resources>
