@@ -289,6 +289,7 @@
         app:srcCompat="@drawable/ic_mail"
         app:hoveredFocusedTranslationZ="50dp"
         app:pressedTranslationZ="20dp"
+        android:visibility="invisible"
         app:rippleColor="@android:color/background_light"/>
 </FrameLayout>
 </RelativeLayout>

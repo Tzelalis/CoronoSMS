@@ -96,10 +96,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setSelectedItem(View view) {
-        if (this.selectedView != null)
+
+        if (this.selectedView == view && this.selectedView.isSelected() == true){
+            findViewById(R.id.button).setVisibility(View.INVISIBLE);
+            this.selectedView.setSelected(false);
+            return;
+        }
+
+        if (this.selectedView != null){
+
             this.selectedView.setSelected(false);
 
+        }
+
+
+
+
         view.setSelected(true);
+        findViewById(R.id.button).setVisibility(View.VISIBLE);
         this.selectedView = view;
     }
 
