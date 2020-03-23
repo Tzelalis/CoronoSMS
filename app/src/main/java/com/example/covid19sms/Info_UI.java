@@ -2,22 +2,32 @@ package com.example.covid19sms;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.solver.widgets.ConstraintHorizontalLayout;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.Image;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Space;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class Info_UI extends AppCompatActivity {
 
@@ -37,12 +47,24 @@ public class Info_UI extends AppCompatActivity {
                 "com.example.covid19sms", Context.MODE_PRIVATE);
 
 
-
-
         //sharedPref.edit().clear().apply();
+
+        fill_fields_with_prefs();
         swap_activity(read_from_pref());
 
     }
+
+
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
 
     private void swap_activity(String info) {
 
@@ -53,6 +75,21 @@ public class Info_UI extends AppCompatActivity {
         }
 
     }
+
+    public void fill_fields_with_prefs(){
+
+
+        TextView firstname = findViewById(R.id.et_name);
+        TextView lastname = findViewById(R.id.et_last_name);
+        TextView address = findViewById(R.id.et_address);
+
+        firstname.setText(sharedPref.getString(key_first_name, ""));
+        lastname.setText(sharedPref.getString(key_last_name, ""));
+        address.setText(sharedPref.getString(key_address, ""));
+
+
+    }
+
 
     public String read_from_pref() {
 
@@ -98,23 +135,30 @@ public class Info_UI extends AppCompatActivity {
         if (!(firstname_text.equals("") || lastname_text.equals("") || address_text.equals(""))) {
             Log.v("covid19", "no empty values");
 
+
             AlertDialog.Builder alt_bld = new AlertDialog.Builder(Info_UI.this);
             alt_bld.setTitle("ΠΡΟΣΟΧΗ");
+
             alt_bld.setIcon(R.drawable.ic_alert);
             alt_bld.setMessage("Για να βεβαιωθείτε οτι έχει ολοκληρωθεί η διαδικασία" +
                     " θα πρέπει να λάβετε μήνυμα επιβεβαίωσης.");
-            alt_bld.setCancelable(true);
+            alt_bld.setCancelable(false);
             alt_bld.setNeutralButton("Εντάξει", new DialogInterface.OnClickListener (){
                 @Override
                 public void onClick(DialogInterface dialog,int which) {
                     dialog.dismiss();
                     swap_activity(read_from_pref());
-
                 }
-            });
+            }
+            );
 
-            AlertDialog alert = alt_bld.create();
+             AlertDialog alert = alt_bld.create();
+
             alert.show();
+
+
+
+
 
         } else {
             Log.v("covid19", "empty values");
