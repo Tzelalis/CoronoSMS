@@ -2,7 +2,8 @@
 <RelativeLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingBottom="20dp">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -287,8 +288,6 @@
         app:backgroundTint="@color/submitButton"
         app:fabCustomSize="65dp"
         app:srcCompat="@drawable/ic_mail"
-        app:hoveredFocusedTranslationZ="50dp"
-        app:pressedTranslationZ="20dp"
         app:rippleColor="@android:color/background_light"/>
 </FrameLayout>
 </RelativeLayout>
