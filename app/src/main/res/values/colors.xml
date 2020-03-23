@@ -2,7 +2,7 @@
 <resources>
 
     <color name="submitButton">#F68B1F</color>
-    <color name="selectedItem">#A9BC00</color>
+    <color name="selectedItem">#FDB913</color>
     <color name="textSubmitButton">#FFFFFF</color>
     <color name="textSelectedItem">#FFFFFF</color>
     <color name="colorPrimary">#9A9A9A</color>

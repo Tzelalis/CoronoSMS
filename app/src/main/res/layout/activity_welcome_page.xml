@@ -96,6 +96,7 @@
             android:layout_margin="50dp"
             app:fabCustomSize="65dp"
             app:srcCompat="@drawable/ic_foursquare_check_in"
+            app:maxImageSize="32dp"
             app:backgroundTint="@android:color/holo_green_light"
             app:rippleColor="@android:color/background_light"
             />
