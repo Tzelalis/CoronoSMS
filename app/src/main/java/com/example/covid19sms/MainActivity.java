@@ -36,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
         //Log.v("covid19", info);
 
-        info = info.replace("\"","");
-        info = info.replace("[","");
-        info = info.replace("]","");
+        info = info.replace("\"", "");
+        info = info.replace("[", "");
+        info = info.replace("]", "");
 
-         personalInfos = info.split(",");
+        personalInfos = info.split(",");
 
         //String s = parts[0] +" "+ parts[1]+" "+parts[2];
         //Log.v("covid19", parts[0] +" "+ parts[1]+" "+parts[2]);
@@ -67,37 +67,37 @@ public class MainActivity extends AppCompatActivity {
 //        int count = optionAdapter.getCount();
 
 
-
     }
 
-    public void setSelectedItem(View view){
-        if(this.selectedView != null)
+    public void setSelectedItem(View view) {
+        if (this.selectedView != null)
             this.selectedView.setSelected(false);
 
         view.setSelected(true);
         this.selectedView = view;
     }
 
-    public void submitInfo(View view){
-        if(selectedView == null){
+    public void submitInfo(View view) {
+        if (selectedView == null) {
             String msg = getApplicationContext().getResources().getString(R.string.no_selected_item);
-            if(mToast!=null){
+            if (mToast != null) {
                 mToast.cancel();
             }
             mToast = Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.show();
-        }else{
+        } else {
             String category = selectedView.getTag().toString();
 
-            this.smsSendMessage();
+            this.smsSendMessage(category);
         }
 
     }
 
-    private void smsSendMessage() {
+    private void smsSendMessage(String category) {
         String destinationAddress = "6940211909";
         String scAddress = null;
-        String smsMessage = "ΝΑΙ ΓΑΜΩ ΤΗ ΠΑΝΑΧΑΙΚΗ ΜΟΥ";
+        String smsMessage = category + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2];
+
 
         // Set pending intents to broadcast
         // when message sent and when delivered, or set to null.
