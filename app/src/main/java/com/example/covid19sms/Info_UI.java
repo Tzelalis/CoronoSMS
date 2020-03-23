@@ -39,7 +39,6 @@ public class Info_UI extends AppCompatActivity {
     public static int flag = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
 

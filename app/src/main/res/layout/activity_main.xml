@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:paddingBottom="20dp">
+    android:paddingBottom="20dp"
+    android:layout_weight="4">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -267,24 +268,22 @@
 <!--        android:padding="0dp"-->
 
 
-
-
 </LinearLayout>
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/button"
-        android:onClick="submitInfo"
-        android:visibility="invisible"
-        style="@style/Widget.MaterialComponents.FloatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right|end"
-        android:layout_margin="10dp"
-        app:backgroundTint="@color/submitButton"
-        app:fabCustomSize="@android:dimen/notification_large_icon_width"
-        app:srcCompat="@drawable/ic_mail"
-        app:rippleColor="@android:color/background_light"/>
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button"
+            android:onClick="submitInfo"
+            android:visibility="invisible"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right|end"
+            android:layout_margin="10dp"
+            app:backgroundTint="@color/submitButton"
+            app:fabCustomSize="@android:dimen/notification_large_icon_width"
+            app:srcCompat="@drawable/ic_mail"
+            app:rippleColor="@android:color/background_light"/>
+    </FrameLayout>
 </RelativeLayout>

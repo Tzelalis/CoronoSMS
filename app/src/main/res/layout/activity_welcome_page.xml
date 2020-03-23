@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/WelcomeUi"
@@ -7,24 +10,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Info_UI"
-
     android:background="#FFFFFF"
-    android:layout_weight="6"
+    android:layout_alignParentBottom="true"
     >
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@drawable/home"
-        ></androidx.appcompat.widget.AppCompatImageView>
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:paddingTop="10dp"
+        android:paddingTop="30dp"
         android:paddingBottom="20dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="5dp"
         android:orientation="vertical"
         android:paddingLeft="30dp"
         android:paddingRight="30dp">
@@ -57,7 +59,7 @@
             android:maxLines="1"
             android:inputType="text"
             android:scrollHorizontally="true"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="40dp"
             android:hint="@string/last_name_gr" />
 
         <EditText
@@ -67,7 +69,7 @@
             android:maxLines="1"
             android:inputType="text"
             android:layout_height="70dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:hint="@string/address_gr"
 
             />
@@ -86,23 +88,21 @@
 
 <!--            />-->
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btn_save"
-            android:onClick="write_to_pref"
-            style="@style/Widget.MaterialComponents.FloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
-            android:layout_margin="50dp"
-            app:fabCustomSize="65dp"
-            app:srcCompat="@drawable/ic_foursquare_check_in"
-            app:maxImageSize="32dp"
-            app:backgroundTint="@android:color/holo_green_light"
-            app:rippleColor="@android:color/background_light"
-            />
-
 
     </LinearLayout>
-
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_save"
+        android:onClick="write_to_pref"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="50dp"
+        app:fabCustomSize="65dp"
+        app:srcCompat="@drawable/ic_foursquare_check_in"
+        app:maxImageSize="32dp"
+        app:backgroundTint="@android:color/holo_green_light"
+        app:rippleColor="@android:color/background_light"
+        />
 </FrameLayout>
+</RelativeLayout>
