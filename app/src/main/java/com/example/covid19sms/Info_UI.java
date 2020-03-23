@@ -152,6 +152,7 @@ public class Info_UI extends AppCompatActivity {
             }
             );
 
+
              AlertDialog alert = alt_bld.create();
 
             alert.show();

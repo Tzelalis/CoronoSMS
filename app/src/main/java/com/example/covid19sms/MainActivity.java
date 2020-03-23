@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             String category = selectedView.getTag().toString();
 
 
-            this.smsSendMessage(category);
+            smsSendMessage(category);
             Toast.makeText(this.getApplicationContext(),"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT);
 
             final Drawable e = findViewById(R.id.button).getBackground();
