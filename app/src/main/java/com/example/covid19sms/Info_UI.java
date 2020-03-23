@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,10 +36,7 @@ public class Info_UI extends AppCompatActivity {
         sharedPref = this.getSharedPreferences(
                 "com.example.covid19sms", Context.MODE_PRIVATE);
 
-        AlertDialog alt_bld = new AlertDialog.Builder(this).create();
-        alt_bld.setMessage("apprika target achieve...");
-        alt_bld.setCancelable(true);
-        alt_bld.show();
+
 
 
         //sharedPref.edit().clear().apply();
@@ -97,7 +97,25 @@ public class Info_UI extends AppCompatActivity {
 
         if (!(firstname_text.equals("") || lastname_text.equals("") || address_text.equals(""))) {
             Log.v("covid19", "no empty values");
-            swap_activity(read_from_pref());
+
+            AlertDialog.Builder alt_bld = new AlertDialog.Builder(Info_UI.this);
+            alt_bld.setTitle("ΠΡΟΣΟΧΗ");
+            alt_bld.setIcon(R.drawable.ic_alert);
+            alt_bld.setMessage("Για να βεβαιωθείτε οτι έχει ολοκληρωθεί η διαδικασία" +
+                    " θα πρέπει να λάβετε μήνυμα επιβεβαίωσης.");
+            alt_bld.setCancelable(true);
+            alt_bld.setNeutralButton("Εντάξει", new DialogInterface.OnClickListener (){
+                @Override
+                public void onClick(DialogInterface dialog,int which) {
+                    dialog.dismiss();
+                    swap_activity(read_from_pref());
+
+                }
+            });
+
+            AlertDialog alert = alt_bld.create();
+            alert.show();
+
         } else {
             Log.v("covid19", "empty values");
 

@@ -15,5 +15,6 @@
     <color name="drk_button">#0055FF</color>
     <color name="lgt_button">#65B2E6</color>
     <color name="black_alpha">#8A8383</color>
-
+    <color name="btn_disable">#9CB1FA</color>
+    <color name="btn_enable">#1103E6</color>
 </resources>

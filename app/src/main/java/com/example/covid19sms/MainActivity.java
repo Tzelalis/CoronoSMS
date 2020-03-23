@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
@@ -23,6 +26,29 @@ public class MainActivity extends AppCompatActivity {
     private Toast mToast = null;
     private String[] personalInfos;
     private static final int MY_PERMISSIONS_REQUEST_SEND_SMS = 1;
+
+
+    boolean doubleBackToExitPressedOnce = false;
+
+//    @Override
+//    public void onBackPressed() {
+//        if (doubleBackToExitPressedOnce) {
+//            this.finishAffinity();
+//            return;
+//        }
+//
+//        this.doubleBackToExitPressedOnce = true;
+//        Toast.makeText(this, "Διπλό κλικ για να αποχωρήσετε", Toast.LENGTH_SHORT).show();
+//
+//        new Handler().postDelayed(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//                doubleBackToExitPressedOnce=false;
+//            }
+//        }, 2000);
+//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         this.selectedView = view;
     }
 
+    @SuppressLint("ResourceAsColor")
     public void submitInfo(View view) {
         if (selectedView == null) {
             String msg = getApplicationContext().getResources().getString(R.string.no_selected_item);
@@ -88,7 +115,23 @@ public class MainActivity extends AppCompatActivity {
         } else {
             String category = selectedView.getTag().toString();
 
+
             this.smsSendMessage(category);
+            Toast.makeText(this.getApplicationContext(),"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT);
+
+            final Drawable e = findViewById(R.id.button).getBackground();
+            final Drawable d = this.getDrawable(R.drawable.round_disabled);
+            findViewById(R.id.button).setEnabled(false);
+            findViewById(R.id.button).setBackground(d);
+            findViewById(R.id.button).postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    findViewById(R.id.button).setEnabled(true);
+                    findViewById(R.id.button).setBackground(e);
+                }
+            }, 2000);
+
         }
 
     }
