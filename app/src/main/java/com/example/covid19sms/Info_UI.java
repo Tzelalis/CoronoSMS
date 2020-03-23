@@ -35,8 +35,8 @@ public class Info_UI extends AppCompatActivity {
     private String key_first_name = "com.example.covid19sms.first_name";
     private String key_last_name = "com.example.covid19sms.last_name";
     private String key_address = "com.example.covid19sms.address";
-    private String flag = "com.example.covid19sms.address";
-
+    //private String flag = "com.example.covid19sms.address";
+    public static int flag = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -48,9 +48,15 @@ public class Info_UI extends AppCompatActivity {
 
 
         //sharedPref.edit().clear().apply();
+        String change = getIntent().getStringExtra("change");
 
+        //gia metabasi kai diatirisi stoixeiwn
         fill_fields_with_prefs();
-        swap_activity(read_from_pref());
+        if (flag!=1){
+            swap_activity(read_from_pref());
+        }
+
+
 
     }
 

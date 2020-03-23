@@ -1,11 +1,14 @@
 package com.example.covid19sms;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Info_UI.flag = 0;
         personalInfos = new String[3];
 
 
@@ -127,24 +131,56 @@ public class MainActivity extends AppCompatActivity {
             mToast = Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.show();
         } else {
-            String category = selectedView.getTag().toString();
 
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            this.smsSendMessage(category);
-            Toast.makeText(this.getApplicationContext(),"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT);
+            builder.setTitle("Επιβεβαίωση");
+            builder.setMessage("Θέλετε να στείλετε το παρακάτω μήνυμα;\n" +
+                    selectedView.getTag().toString()+" "+personalInfos[0] +" "+personalInfos[1]+" "+personalInfos[2] );
 
-            final Drawable e = findViewById(R.id.button).getBackground();
-            final Drawable d = this.getDrawable(R.drawable.round_disabled);
-            findViewById(R.id.button).setEnabled(false);
-            findViewById(R.id.button).setBackground(d);
-            findViewById(R.id.button).postDelayed(new Runnable() {
+            builder.setPositiveButton("Επιβεβαίωση", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+                    // Do nothing but close the dialog
+                    AlertDialog alert = builder.create();
+                    alert.show();
+
+                    String category = selectedView.getTag().toString();
+
+                    MainActivity.this.smsSendMessage(category);
+                    Toast.makeText(MainActivity.this.getApplicationContext(),"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT);
+
+                    final Drawable e = findViewById(R.id.button).getBackground();
+                    final Drawable d = MainActivity.this.getDrawable(R.drawable.round_disabled);
+                    findViewById(R.id.button).setEnabled(false);
+                    findViewById(R.id.button).setBackground(d);
+                    findViewById(R.id.button).postDelayed(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            findViewById(R.id.button).setEnabled(true);
+                            findViewById(R.id.button).setBackground(e);
+                        }
+                    }, 2000);
+                    dialog.dismiss();
+                }
+            });
+
+            builder.setNegativeButton("Αλλαγή στοιχείων", new DialogInterface.OnClickListener() {
 
                 @Override
-                public void run() {
-                    findViewById(R.id.button).setEnabled(true);
-                    findViewById(R.id.button).setBackground(e);
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    Intent intent = new Intent(getBaseContext(), Info_UI.class);
+                    Info_UI.flag = 1;
+                    startActivity(intent);
                 }
-            }, 2000);
+            });
+
+            AlertDialog alert = builder.create();
+            alert.setCancelable(true);
+            alert.show();
+
 
         }
 
@@ -170,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.SEND_SMS) !=
                 PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText(this, "DEN EXEIS DIKAIWMA", Toast.LENGTH_SHORT);
+            //Toast.makeText(this, "DEN EXEIS DIKAIWMA", Toast.LENGTH_SHORT);
             // Permission not yet granted. Use requestPermissions().
             // MY_PERMISSIONS_REQUEST_SEND_SMS is an
             // app-defined int constant. The callback method gets the
@@ -179,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.SEND_SMS},
                     MY_PERMISSIONS_REQUEST_SEND_SMS);
         } else {
-            Toast.makeText(this, "EXEIS DIKAIWMA", Toast.LENGTH_SHORT);
+            //Toast.makeText(this, "EXEIS DIKAIWMA", Toast.LENGTH_SHORT);
         }
     }
 
@@ -194,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-                    Toast.makeText(this, "thn phraaaa", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, "thn phraaaa", Toast.LENGTH_SHORT).show();
                 } else {
 
                     // permission denied, boo! Disable the
