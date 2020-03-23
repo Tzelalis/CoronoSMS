@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Covid19SMS</string>
+    <string name="title">#MENOUMESPITI</string>
+    <string name="first_name_gr">Όνομα</string>
+    <string name="last_name_gr">Επώνυμο</string>
+    <string name="address_gr">Διεύθυνση</string>
+    <string name="err_toast_info_missing_gr">Συμπληρώστε όλα τα στοιχεία σας!</string>
 </resources>

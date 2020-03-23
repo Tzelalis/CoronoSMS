@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Info_UI"
+    android:background="#FFFFFF"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/home"
+        ></androidx.appcompat.widget.AppCompatImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:text="@string/title"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textColor="@color/colorPrimary"-->
+<!--            />-->
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_marginTop="50dp"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/first_name_gr" />
+
+
+        <EditText
+            android:id="@+id/et_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:hint="@string/last_name_gr" />
+
+        <EditText
+            android:id="@+id/et_address"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:hint="@string/address_gr"
+            />
+
+s        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/round"
+            android:textColor="@android:color/white"
+            android:onClick="write_to_pref"
+            android:shadowColor="@color/btn_shadow"
+            android:text="Αποθήκευση "
+            android:textSize="18sp"
+
+            />
+
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#1103E6</color>
+    <color name="colorPrimaryDark">#0055FF</color>
+    <color name="colorAccent">#0055FF</color>
+    <color name="borderColor">#0055FF</color>
+    <color name="btn_color">#0055FF</color>
+    <color name="btn_shadow">#2B2A2A</color>
+    <color name="drk_button">#0055FF</color>
+    <color name="lgt_button">#65B2E6</color>
+    <color name="black_alpha">#8A8383</color>
 </resources>
