@@ -7,6 +7,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -142,18 +143,19 @@ public class MainActivity extends AppCompatActivity {
 
                 public void onClick(DialogInterface dialog, int which) {
                     // Do nothing but close the dialog
-                    AlertDialog alert = builder.create();
-                    alert.show();
 
                     String category = selectedView.getTag().toString();
 
-                    MainActivity.this.smsSendMessage(category);
-                    Toast.makeText(MainActivity.this.getApplicationContext(),"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT);
+                    //MainActivity.this.smsSendMessage(category);
 
                     final Drawable e = findViewById(R.id.button).getBackground();
                     final Drawable d = MainActivity.this.getDrawable(R.drawable.round_disabled);
                     findViewById(R.id.button).setEnabled(false);
                     findViewById(R.id.button).setBackground(d);
+
+
+                    dialog.dismiss();
+                    Toast.makeText(MainActivity.this,"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT).show();
                     findViewById(R.id.button).postDelayed(new Runnable() {
 
                         @Override
@@ -162,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                             findViewById(R.id.button).setBackground(e);
                         }
                     }, 2000);
-                    dialog.dismiss();
+
                 }
             });
 
@@ -200,6 +202,9 @@ public class MainActivity extends AppCompatActivity {
         smsManager.sendTextMessage
                 (destinationAddress, scAddress, smsMessage,
                         sentIntent, deliveryIntent);
+
+
+
     }
 
     private void checkForSmsPermission() {
