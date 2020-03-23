@@ -1,8 +1,10 @@
 package com.example.covid19sms;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ public class Info_UI extends AppCompatActivity {
     private String key_first_name = "com.example.covid19sms.first_name";
     private String key_last_name = "com.example.covid19sms.last_name";
     private String key_address = "com.example.covid19sms.address";
+    private String flag = "com.example.covid19sms.address";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,11 @@ public class Info_UI extends AppCompatActivity {
 
         sharedPref = this.getSharedPreferences(
                 "com.example.covid19sms", Context.MODE_PRIVATE);
+
+        AlertDialog alt_bld = new AlertDialog.Builder(this).create();
+        alt_bld.setMessage("apprika target achieve...");
+        alt_bld.setCancelable(true);
+        alt_bld.show();
 
 
         //sharedPref.edit().clear().apply();
