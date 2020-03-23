@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="submitButton">
+        <item name="android:background">@color/submitButton</item>
+        <item name="android:textColor">@color/textSubmitButton</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="text_items_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
 </resources>

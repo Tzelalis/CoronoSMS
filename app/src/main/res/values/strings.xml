@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Covid19SMS</string>
+    <string name="option_icon_desc">Option Icon</string>
+    <string name="submit_button">Υποβολή</string>
+    <string name="no_selected_item">Παρακαλώ επιλέξτε...</string>
+    <string name="option1">Φαρμακείο ή επίσκεψη στον γιατρό</string>
+    <string name="option2">Κατάστημα προμηθειών αγαθών πρώτης ανάγκης</string>
+    <string name="option3">Τράπεζα</string>
+    <string name="option4">Παροχή βοήθειας σε ανθρώπους που βρίσκονται σε ανάγκη</string>
+    <string name="option5">Θρησκευτική τελετή, μετάβαση διαζευγμένων γονέων</string>
+    <string name="option6">Σωματική άσκηση ή κίνηση με κατοικίδιο ζώο</string>
 </resources>

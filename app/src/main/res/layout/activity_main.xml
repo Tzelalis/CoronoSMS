@@ -1,18 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/optionListViewLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--    <ListView-->
+    <!--        android:id="@+id/optionsListView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="1">-->
+
+    <!--    </ListView>-->
+
+
+    <LinearLayout
+        android:id="@+id/optionListViewLinearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/selected_item"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="setSelectedItem"
+        android:orientation="horizontal"
+        android:tag="1">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/option_icon_desc"
+            android:paddingStart="16dp"
+            android:paddingRight="16dp"
+            android:src="@mipmap/baseline_local_hospital_black_36" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/text_items_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="@string/option1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/optionListViewLinearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/selected_item"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="setSelectedItem"
+        android:orientation="horizontal"
+        android:tag="2">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/option_icon_desc"
+            android:paddingStart="16dp"
+            android:paddingRight="16dp"
+            android:src="@drawable/round_storefront_24" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/text_items_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="@string/option2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/optionListViewLinearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/selected_item"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="setSelectedItem"
+        android:orientation="horizontal"
+        android:tag="3">
+
+        <ImageView
+            android:id="@+id/imageVie3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:contentDescription="@string/option_icon_desc"
+            android:paddingStart="16dp"
+            android:paddingRight="16dp"
+            android:src="@drawable/round_account_balance_48" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/text_items_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="@string/option3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/optionListViewLinearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/selected_item"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="setSelectedItem"
+        android:orientation="horizontal"
+        android:tag="4">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/option_icon_desc"
+            android:paddingStart="16dp"
+            android:paddingRight="16dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/text_items_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="@string/option4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/optionListViewLinearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/selected_item"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="setSelectedItem"
+        android:orientation="horizontal"
+        android:tag="5">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/option_icon_desc"
+            android:paddingStart="16dp"
+            android:paddingRight="16dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/text_items_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="@string/option5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/optionListViewLinearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@drawable/selected_item"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="setSelectedItem"
+        android:orientation="horizontal"
+        android:tag="6">
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/option_icon_desc"
+            android:paddingStart="16dp"
+            android:paddingRight="16dp"
+            android:src="@drawable/round_directions_run_24" />
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/text_items_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:text="@string/option6" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.ButtonBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="5dp"
+        android:layout_weight="0"
+        android:background="@drawable/submit_button_style"
+        android:linksClickable="false"
+        android:onClick="submitInfo"
+        android:padding="0dp"
+        android:text="@string/submit_button" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
