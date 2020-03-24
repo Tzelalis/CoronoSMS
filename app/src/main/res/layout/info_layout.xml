@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <RelativeLayout
+        android:paddingTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/info_top_menu"
@@ -12,14 +13,14 @@
         <Button
             android:id="@+id/info_close_button"
             style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-            android:layout_width="wrap_content"
+            android:layout_width="@android:dimen/app_icon_size"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="3dp"
+            android:layout_marginStart="0dp"
             android:paddingBottom="3dp"
-            android:paddingEnd="3dp"
-            android:paddingStart="3dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="0dp"
             android:paddingTop="3dp"
             app:icon="@drawable/ic_back_icon"
             app:iconGravity="textStart"
@@ -55,6 +56,7 @@
             android:layout_toStartOf="@id/imageView"
             android:layout_toEndOf="@id/info_close_button"
             android:gravity="center"
+            android:textAlignment="center"
             android:text="@string/info_title"
             android:textColor="@color/tuto_title"
             android:textSize="24sp" />
@@ -175,6 +177,17 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/iko" />
+                <TextView
+                    android:id="@+id/textView17"
+                    style="@style/info_texts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="flaticon.com" />
             </LinearLayout>
 
             <LinearLayout
@@ -213,6 +226,30 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/contact_email" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/reason"
+                android:textSize="13sp" />
 
 
             </LinearLayout>

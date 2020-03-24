@@ -23,14 +23,14 @@
     <string name="description_3">Για να βεβαιωθείτε πως το μήνυμα σας έχει σταλθεί
     θα πρέπει να περιμένετε εως ότου λάβετε το μήνυμα απάντηση από το 13033.
     Υπάρχουν λόγοι για τους οποίους μπορεί να μην λάβετε μήνυμα π.χ.(φραγή σε 5ψήφια).</string>
-
+    <string name="reason">*Η εφαρμογή αυτή δημιουργήθηκε για διευκόλυνση των πολιτών κατά την περίοδο της καραντίνας λόγω του κορονοϊού. </string>
     <string name="next">ΕΠΟΜΕΝΟ</string>
     <string name="back">ΠΡΟΗΓΟΥΜΕΝΟ</string>
     <string name="done">ΤΕΛΟΣ</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="tzelalis">Τζελαλής Παναγιώτης</string>
-    <string name="xhino">Μουλλαυμερι Σταύρος</string>
+    <string name="xhino">Μουλλαϋμέρι Τζίνο</string>
     <string name="rizik">Ριζικιανός Γιώργος</string>
     <string name="iko">Οικονομίδης Βασίλης</string>
     <string name="contact_email">suncitydevs@gmail.com</string>
