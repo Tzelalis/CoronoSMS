@@ -29,7 +29,8 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/border"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:padding="30dp"
+            >
 
             <TextView
                 android:id="@+id/textView10"
@@ -92,7 +93,8 @@
             android:layout_margin="30dp"
             android:background="@drawable/border"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:padding="30dp"
+            >
 
             <TextView
                 android:id="@+id/textView11"
@@ -127,7 +129,8 @@
             android:layout_margin="30dp"
             android:background="@drawable/border"
             android:orientation="vertical"
-            android:padding="30dp">
+            android:padding="30dp"
+            >
 
             <TextView
                 android:id="@+id/textView14"
