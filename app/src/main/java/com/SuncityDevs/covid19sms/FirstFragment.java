@@ -1,4 +1,4 @@
-package com.example.covid19sms;
+package com.SuncityDevs.covid19sms;
 
 import android.os.Bundle;
 
@@ -8,45 +8,33 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
 
-public class SecondFragment extends Fragment {
+public class FirstFragment extends Fragment {
 
-    TextView next;
-    TextView back;
+    Button next;
     ViewPager viewPager;
 
-
-    public SecondFragment() {
+    public FirstFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_second, container, false);
+        // Inflate the layout for this fragment
+        View view =  inflater.inflate(R.layout.fragment_first, container, false);
         //initialize viewpager from tutorial activity
         viewPager = getActivity().findViewById(R.id.viewPager);
 
+        next = view.findViewById(R.id.slider_one_next);
 
-        next = view.findViewById(R.id.slider_two_next);
         next.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                viewPager.setCurrentItem(2);
-            }
-
-        });
-
-
-        back = view.findViewById(R.id.slider_two_back);
-        back.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(0);
+                viewPager.setCurrentItem(1);
             }
 
         });
@@ -54,4 +42,6 @@ public class SecondFragment extends Fragment {
 
         return view;
     }
+
+
 }

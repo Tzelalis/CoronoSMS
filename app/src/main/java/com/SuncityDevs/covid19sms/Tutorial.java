@@ -1,4 +1,4 @@
-package com.example.covid19sms;
+package com.SuncityDevs.covid19sms;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
