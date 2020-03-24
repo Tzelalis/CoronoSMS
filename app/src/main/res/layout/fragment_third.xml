@@ -44,38 +44,33 @@
         android:layout_margin="20dp"
         android:textSize="18sp" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginTop="30dp">
 
 
         <Button
             android:id="@+id/slider_three_back"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:gravity="bottom|end"
             android:text="@string/back"
-            android:textAlignment="textStart"
+            android:layout_alignParentLeft="true"
             android:textColor="@color/tuto_title"
-            android:textSize="20sp"
-            tools:ignore="RtlCompat" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/slider_end"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_weight="1"
+            android:layout_alignParentRight="true"
             android:gravity="bottom|end"
             android:text="@string/done"
             android:textColor="@color/tuto_title"
             android:textSize="20sp" />
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

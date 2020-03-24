@@ -48,7 +48,7 @@
         android:layout_marginBottom="20dp"
         />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -60,14 +60,12 @@
             android:id="@+id/slider_one_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_alignParentRight="true"
             android:textSize="20sp"
             android:textColor="@color/tuto_title"
             android:text="@string/next"
-            android:layout_gravity="bottom|end"
-            android:gravity="bottom|end"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             />
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>

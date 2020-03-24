@@ -1,36 +1,25 @@
 package com.example.covid19sms;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.telephony.SmsManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -42,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     boolean doubleBackToExitPressedOnce = false;
 
-//    @Override
+    //    @Override
 //    public void onBackPressed() {
 //        if (doubleBackToExitPressedOnce) {
 //            this.finishAffinity();
@@ -103,8 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 1);
 
 
-
-
     }
 
     @Override
@@ -115,14 +102,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void setSelectedItem(View view) {
 
-        if (this.selectedView == view && this.selectedView.isSelected() == true){
+        if (this.selectedView == view && this.selectedView.isSelected() == true) {
             findViewById(R.id.button).setEnabled(false);
             findViewById(R.id.button).setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimary)));
             this.selectedView.setSelected(false);
             return;
         }
 
-        if (this.selectedView != null){
+        if (this.selectedView != null) {
 
             this.selectedView.setSelected(false);
 
@@ -149,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
             builder.setTitle("Επιβεβαίωση");
             builder.setMessage("Θέλετε να στείλετε το μήνυμα;\n\n" +
-                    selectedView.getTag().toString()+" "+personalInfos[0] +" "+personalInfos[1]+" "+personalInfos[2] );
+                    selectedView.getTag().toString() + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2]);
 
             builder.setPositiveButton("Επιβεβαίωση", new DialogInterface.OnClickListener() {
 
@@ -165,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
                     //findViewById(R.id.button).setBackgroundColor(R.color.submitButtondisable);
                     findViewById(R.id.button).setBackground(d);
                     findViewById(R.id.button).setEnabled(false);
-
 
 
                     dialog.dismiss();
@@ -217,7 +203,6 @@ public class MainActivity extends AppCompatActivity {
         smsManager.sendTextMessage
                 (destinationAddress, scAddress, smsMessage,
                         sentIntent, deliveryIntent);
-
 
 
     }
