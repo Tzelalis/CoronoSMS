@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Toast.makeText(MainActivity.this, "ASDAFA", Toast.LENGTH_SHORT);
+        Toast.makeText(MainActivity.this, "ASDAFA", Toast.LENGTH_SHORT).show();
 //            Intent intent = new Intent(getBaseContext(), Info_UI.class);
 //            Info_UI.flag = 1;
 //            startActivity(intent);
