@@ -1,7 +1,9 @@
 package com.example.covid19sms;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -22,7 +24,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -55,12 +60,16 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        }, 2000);
 //    }
-
+    FloatingActionButton floatingActionButton;
+    BottomAppBar bottomAppBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        floatingActionButton = findViewById(R.id.button);
+        bottomAppBar = findViewById(R.id.bar);
+        setSupportActionBar(bottomAppBar);
         Info_UI.flag = 0;
         personalInfos = new String[3];
 
@@ -186,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void smsSendMessage(String category) {
-        String destinationAddress = "13033";
+        String destinationAddress = "6987379029";
         String scAddress = null;
         String smsMessage = category + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2];
 
