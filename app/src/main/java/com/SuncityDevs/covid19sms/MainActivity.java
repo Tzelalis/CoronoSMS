@@ -11,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -51,13 +52,14 @@ public class MainActivity extends AppCompatActivity {
 //    }
     FloatingActionButton floatingActionButton;
     BottomAppBar bottomAppBar;
-
+    MenuItem info_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         floatingActionButton = findViewById(R.id.button);
         bottomAppBar = findViewById(R.id.bar);
+        info_button  = findViewById(R.id.menuChangeInfo);
         setSupportActionBar(bottomAppBar);
         bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         Info_UI.flag = 0;
         personalInfos = new String[3];
 
@@ -249,5 +252,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.bottom_menu, menu);
         return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(MainActivity.this, "ASDAFA", Toast.LENGTH_SHORT);
+//            Intent intent = new Intent(getBaseContext(), Info_UI.class);
+//            Info_UI.flag = 1;
+//            startActivity(intent);
+            return true;
     }
 }
