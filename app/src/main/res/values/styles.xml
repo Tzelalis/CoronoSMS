@@ -26,4 +26,10 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="info_texts">
+        <item name="android:textSize">18sp</item>
+
+
+    </style>
+
 </resources>

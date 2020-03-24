@@ -13,12 +13,9 @@
     <string name="last_name_gr">Επώνυμο</string>
     <string name="address_gr">Διεύθυνση</string>
     <string name="err_toast_info_missing_gr">Συμπληρώστε όλα τα στοιχεία σας!</string>
-
-
     <string name="tuto_1">Χαίρετε</string>
     <string name="tuto_2">Διαδικασία</string>
     <string name="tuto_3">Προσοχή</string>
-
     <string name="description_1">Η εφαρμογή CoronoSMS είναι εδώ για να σας βοηθήσει! Με ένα κλικ θα μπορείτε να στείλετε το μηνυμα σας!
         Καλή δύναμη σε όλους και υπομονή! #MENOUMESPITI</string>
     <string name="description_2">Εφόσον συμπληρώσετε και αποθηκεύσετε τα στοιχεία σας, θα  είστε έτοιμοι για να
@@ -27,12 +24,16 @@
     θα πρέπει να περιμένετε εως ότου λάβετε το μήνυμα απάντηση από το 13033.
     Υπάρχουν λόγοι για τους οποίους μπορεί να μην λάβετε μήνυμα π.χ.(φραγή σε 5ψήφια).</string>
 
-
     <string name="next">ΕΠΟΜΕΝΟ</string>
     <string name="back">ΠΡΟΗΓΟΥΜΕΝΟ</string>
     <string name="done">ΤΕΛΟΣ</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="tzelalis">Τζελαλής Παναγιώτης</string>
+    <string name="xhino">Σταύρος Μουλλαυμερι</string>
+    <string name="rizik">Ριζικιανός Γιώργος</string>
+    <string name="iko">Οικονομίδης Βασίλης</string>
+    <string name="app_email">suncitydevs@gmail.com</string>
+    <string name="logo_desc">Logo Icon</string>
 
 </resources>

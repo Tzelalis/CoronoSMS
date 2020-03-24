@@ -23,17 +23,16 @@ public class SecondFragment extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_second, container, false);
+        View view = inflater.inflate(R.layout.fragment_second, container, false);
         //initialize viewpager from tutorial activity
         viewPager = getActivity().findViewById(R.id.viewPager);
 
 
         next = view.findViewById(R.id.slider_two_next);
-        next.setOnClickListener(new View.OnClickListener(){
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewPager.setCurrentItem(2);
@@ -43,7 +42,7 @@ public class SecondFragment extends Fragment {
 
 
         back = view.findViewById(R.id.slider_two_back);
-        back.setOnClickListener(new View.OnClickListener(){
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewPager.setCurrentItem(0);
