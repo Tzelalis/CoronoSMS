@@ -59,6 +59,7 @@
             android:text="@string/back"
             android:layout_alignParentLeft="true"
             android:textColor="@color/tuto_title"
+            android:autoSizeTextType="uniform"
             android:textSize="20sp" />
 
         <Button
@@ -69,6 +70,7 @@
             android:layout_alignParentRight="true"
             android:gravity="bottom|end"
             android:text="@string/done"
+            android:autoSizeTextType="uniform"
             android:textColor="@color/tuto_title"
             android:textSize="20sp" />
     </RelativeLayout>

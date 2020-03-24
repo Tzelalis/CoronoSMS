@@ -63,6 +63,7 @@
             android:layout_alignParentRight="true"
             android:textSize="20sp"
             android:textColor="@color/tuto_title"
+            android:autoSizeTextType="uniform"
             android:text="@string/next"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             />

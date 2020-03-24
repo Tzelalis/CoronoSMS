@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         Info_UI.flag = 0;
         personalInfos = new String[3];
 
-
         String info = getIntent().getStringExtra("person_info");
 
         findViewById(R.id.button).setEnabled(false);
@@ -194,7 +193,6 @@ public class MainActivity extends AppCompatActivity {
         String scAddress = null;
         String smsMessage = category + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2];
 
-
         // Set pending intents to broadcast
         // when message sent and when delivered, or set to null.
         PendingIntent sentIntent = null, deliveryIntent = null;
@@ -203,8 +201,6 @@ public class MainActivity extends AppCompatActivity {
         smsManager.sendTextMessage
                 (destinationAddress, scAddress, smsMessage,
                         sentIntent, deliveryIntent);
-
-
     }
 
     private void checkForSmsPermission() {
