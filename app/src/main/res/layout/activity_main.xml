@@ -325,7 +325,6 @@
             style="@style/Widget.MaterialComponents.FloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="submitInfo"
             app:backgroundTint="@color/colorPrimary"
             app:fabCustomSize="@android:dimen/notification_large_icon_width"
             app:fabSize="normal"

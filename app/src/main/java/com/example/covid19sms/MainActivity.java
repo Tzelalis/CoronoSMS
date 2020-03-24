@@ -91,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
                 1);
 
 
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                submitInfo(v);
+            }
+        });
     }
 
 
@@ -125,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             mToast = Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.show();
         } else {
-            if(checkForSmsPermission()){
+            if (checkForSmsPermission()) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
                 builder.setTitle("Επιβεβαίωση");
