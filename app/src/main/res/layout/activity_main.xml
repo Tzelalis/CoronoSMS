@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/optionListViewLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="80dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical">
-
-        <!--    <ListView-->
-        <!--        android:id="@+id/optionsListView"-->
-        <!--        android:layout_width="match_parent"-->
-        <!--        android:layout_height="0dp"-->
-        <!--        android:layout_weight="1">-->
-
 
         <FrameLayout
             android:id="@+id/option1FrameLayout"
@@ -299,6 +292,11 @@
 
         </FrameLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
 
         <!--            <Button-->
         <!--                android:id="@+id/button"-->
@@ -319,24 +317,17 @@
 
     </LinearLayout>
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-
-    </FrameLayout>
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/bottomBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            android:layout_marginTop="40dp"
             android:backgroundTint="@color/design_default_color_primary"
             app:fabAlignmentMode="center"
             app:fabCradleMargin="5dp"
@@ -356,4 +347,4 @@
             app:srcCompat="@drawable/ic_mail" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-</RelativeLayout>
+</LinearLayout>

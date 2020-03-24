@@ -3,78 +3,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThirdFragment"
-    android:padding="16dp"
+    android:background="@color/fragment_background"
     android:orientation="vertical"
-    android:background="@color/fragment_background">
+    android:padding="16dp"
+    tools:context=".ThirdFragment">
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
+        android:maxHeight="250dp"
+        android:maxWidth="250dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
         android:src="@drawable/ic_bell" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tuto_3"
-        android:textSize="26sp"
-        android:layout_marginTop="50dp"
+
         android:layout_gravity="center"
-        android:textColor="@color/desc_color"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/lato_bold"
-        />
+        android:text="@string/tuto_3"
+        android:textColor="@color/desc_color"
+        android:textSize="26sp" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/description_3"
-        android:textSize="18sp"
-        android:gravity="center"
+        android:layout_marginTop="15dp"
         android:fontFamily="@font/lato_light"
-        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/description_3"
         android:textColor="@color/desc_color"
-        />
+        android:layout_margin="20dp"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-
 
 
         <Button
             android:id="@+id/slider_three_back"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="20sp"
-            android:text="@string/back"
             android:layout_gravity="bottom|end"
+            android:layout_weight="1"
             android:gravity="bottom|end"
-            android:textColor="@color/tuto_title"
+            android:text="@string/back"
             android:textAlignment="textStart"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/tuto_title"
+            android:textSize="20sp"
             tools:ignore="RtlCompat" />
 
         <Button
             android:id="@+id/slider_end"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
             android:layout_weight="1"
-            android:textSize="20sp"
+            android:gravity="bottom|end"
             android:text="@string/done"
             android:textColor="@color/tuto_title"
-            android:layout_gravity="bottom|end"
-            android:gravity="bottom|end"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            />
+            android:textSize="20sp" />
     </LinearLayout>
 
 </LinearLayout>

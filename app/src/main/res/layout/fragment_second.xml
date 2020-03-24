@@ -11,9 +11,13 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:maxHeight="250dp"
+        android:maxWidth="250dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
         android:src="@drawable/ic_form" />
 
     <TextView
@@ -39,11 +43,12 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
