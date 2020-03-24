@@ -27,13 +27,13 @@
     </style>
 
     <style name="info_texts">
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">18sp</item>
 
 
     </style>
 
     <style name="info_title_texts">
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">22sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
