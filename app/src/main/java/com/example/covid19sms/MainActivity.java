@@ -11,15 +11,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -64,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
         String info = getIntent().getStringExtra("person_info");
 
-        //Log.v("covid19", info);
+        findViewById(R.id.button).setEnabled(false);
+
 
         info = info.replace("\"", "");
         info = info.replace("[", "");
@@ -80,29 +84,22 @@ public class MainActivity extends AppCompatActivity {
                 new String[]{Manifest.permission.SEND_SMS},
                 1);
 
-//
-//        ArrayList<Option> optionsList = new ArrayList<Option>();
-//        optionsList.add(new Option("Νοσοκομείο", R.drawable.baseline_local_hospital_36));
-//        optionsList.add(new Option("Σουπερ Μαρκετ", R.drawable.baseline_local_hospital_36));
-//        optionsList.add(new Option("Βολτα τον σκυλο", R.drawable.baseline_local_hospital_36));
-//        optionsList.add(new Option("Υπηρεσια", R.drawable.baseline_local_hospital_36));
-//        optionsList.add(new Option("Βοηθεια σε ατομο", R.drawable.baseline_local_hospital_36));
-//        optionsList.add(new Option("Αθληση", R.drawable.baseline_local_hospital_36));
-//
-//        OptionAdapter optionAdapter = new OptionAdapter(this, optionsList);
-//
-//        ListView listview = findViewById(R.id.optionsListView);
-//        listview.setAdapter(optionAdapter);
-//
-//        int count = optionAdapter.getCount();
 
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_menu, menu);
+        return true;
     }
 
     public void setSelectedItem(View view) {
 
         if (this.selectedView == view && this.selectedView.isSelected() == true){
-            findViewById(R.id.button).setVisibility(View.INVISIBLE);
+            findViewById(R.id.button).setEnabled(false);
+            findViewById(R.id.button).setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimary)));
             this.selectedView.setSelected(false);
             return;
         }
@@ -113,11 +110,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-
-
-
         view.setSelected(true);
-        findViewById(R.id.button).setVisibility(View.VISIBLE);
+        findViewById(R.id.button).setEnabled(true);
+        findViewById(R.id.button).setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.submitButton)));
         this.selectedView = view;
     }
 
