@@ -14,6 +14,13 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+
+    <style name="submitButtondis">
+        <item name="android:background">#22FF09</item>
+        <item name="android:textColor">@color/textSubmitButton</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <style name="text_items_style">
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">normal</item>

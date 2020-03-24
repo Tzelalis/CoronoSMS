@@ -13,4 +13,22 @@
     <string name="last_name_gr">Επώνυμο</string>
     <string name="address_gr">Διεύθυνση</string>
     <string name="err_toast_info_missing_gr">Συμπληρώστε όλα τα στοιχεία σας!</string>
+
+
+    <string name="tuto_1">Χαίρετε</string>
+    <string name="tuto_2">Προεργασία</string>
+    <string name="tuto_3">Αποστολη!</string>
+
+    <string name="description_1">Η εφαρμογή ταδε είναι εδώ για να σας βοηθήσει! Με ένα κλικ θα μπορείτε να στείλετε το μηνυμα σας!</string>
+    <string name="description_2">Πρέπει να συμπληρώσετε ΜΙΑ φορά την φόρμα με τα στοιχεία σας. Και έπειτα εμφανίζονται οι επιλογές σας</string>
+    <string name="description_3">Επιλέξτε μια και στείλτε το μήνυμα!</string>
+
+
+    <string name="next">Επόμενο</string>
+    <string name="back">Προηγούμενο</string>
+    <string name="done">Τέλος</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

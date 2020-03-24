@@ -34,31 +34,30 @@ public class MainActivity extends AppCompatActivity {
 
     boolean doubleBackToExitPressedOnce = false;
 
-    @Override
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            this.finishAffinity();
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Διπλό κλικ για να αποχωρήσετε", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-            }
-        }, 2000);
-    }
+//    @Override
+//    public void onBackPressed() {
+//        if (doubleBackToExitPressedOnce) {
+//            this.finishAffinity();
+//            return;
+//        }
+//
+//        this.doubleBackToExitPressedOnce = true;
+//        Toast.makeText(this, "Διπλό κλικ για να αποχωρήσετε", Toast.LENGTH_SHORT).show();
+//
+//        new Handler().postDelayed(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//                doubleBackToExitPressedOnce=false;
+//            }
+//        }, 2000);
+//    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Info_UI.flag = 0;
         personalInfos = new String[3];
 
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
             builder.setTitle("Επιβεβαίωση");
-            builder.setMessage("Θέλετε να στείλετε το παρακάτω μήνυμα;\n" +
+            builder.setMessage("Θέλετε να στείλετε το παρακάτω μήνυμα;\n\n" +
                     selectedView.getTag().toString()+" "+personalInfos[0] +" "+personalInfos[1]+" "+personalInfos[2] );
 
             builder.setPositiveButton("Επιβεβαίωση", new DialogInterface.OnClickListener() {
@@ -150,12 +149,15 @@ public class MainActivity extends AppCompatActivity {
 
                     final Drawable e = findViewById(R.id.button).getBackground();
                     final Drawable d = MainActivity.this.getDrawable(R.drawable.round_disabled);
-                    findViewById(R.id.button).setEnabled(false);
+                    //findViewById(R.id.button).setBackgroundColor(R.color.submitButtondisable);
                     findViewById(R.id.button).setBackground(d);
+                    findViewById(R.id.button).setEnabled(false);
+
 
 
                     dialog.dismiss();
-                    Toast.makeText(MainActivity.this,"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this,"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT).show();
+
                     findViewById(R.id.button).postDelayed(new Runnable() {
 
                         @Override
@@ -168,14 +170,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            builder.setNegativeButton("Αλλαγή στοιχείων", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("Ακύρωση", new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
-                    Intent intent = new Intent(getBaseContext(), Info_UI.class);
-                    Info_UI.flag = 1;
-                    startActivity(intent);
+//                    Intent intent = new Intent(getBaseContext(), Info_UI.class);
+//                    Info_UI.flag = 1;
+//                    startActivity(intent);
                 }
             });
 

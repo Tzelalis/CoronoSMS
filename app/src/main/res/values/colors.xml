@@ -2,6 +2,7 @@
 <resources>
 
     <color name="submitButton">#F68B1F</color>
+    <color name="submitButtondisable">#31FD1A</color>
     <color name="selectedItem">#FDB913</color>
     <color name="textSubmitButton">#FFFFFF</color>
     <color name="textSelectedItem">#FFFFFF</color>
@@ -16,4 +17,8 @@
     <color name="black_alpha">#8A8383</color>
     <color name="btn_disable">#9CB1FA</color>
     <color name="btn_enable">#1103E6</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="tuto_title">#F68B1F</color>
+    <color name="fragment_background">#89B7FF</color>
 </resources>

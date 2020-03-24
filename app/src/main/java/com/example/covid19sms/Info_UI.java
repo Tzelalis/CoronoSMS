@@ -37,10 +37,13 @@ public class Info_UI extends AppCompatActivity {
     private String key_address = "com.example.covid19sms.address";
     //private String flag = "com.example.covid19sms.address";
     public static int flag = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
+
 
         sharedPref = this.getSharedPreferences(
                 "com.example.covid19sms", Context.MODE_PRIVATE);
@@ -51,14 +54,19 @@ public class Info_UI extends AppCompatActivity {
 
         //gia metabasi kai diatirisi stoixeiwn
         fill_fields_with_prefs();
+
         if (flag!=1){
             swap_activity(read_from_pref());
         }
 
 
-
     }
 
+
+        @Override
+    public void onBackPressed() {
+            return;
+        }
 
 
     @Override
@@ -78,6 +86,7 @@ public class Info_UI extends AppCompatActivity {
             intent.putExtra("person_info", info);
             startActivity(intent);
         }
+
 
     }
 
@@ -140,27 +149,28 @@ public class Info_UI extends AppCompatActivity {
         if (!(firstname_text.equals("") || lastname_text.equals("") || address_text.equals(""))) {
             Log.v("covid19", "no empty values");
 
+            swap_activity(read_from_pref());
 
-            AlertDialog.Builder alt_bld = new AlertDialog.Builder(Info_UI.this);
-            alt_bld.setTitle("ΠΡΟΣΟΧΗ");
-
-            alt_bld.setIcon(R.drawable.ic_alert);
-            alt_bld.setMessage("Για να βεβαιωθείτε οτι έχει ολοκληρωθεί η διαδικασία" +
-                    " θα πρέπει να λάβετε μήνυμα επιβεβαίωσης.");
-            alt_bld.setCancelable(false);
-            alt_bld.setNeutralButton("Εντάξει", new DialogInterface.OnClickListener (){
-                @Override
-                public void onClick(DialogInterface dialog,int which) {
-                    dialog.dismiss();
-                    swap_activity(read_from_pref());
-                }
-            }
-            );
-
-
-             AlertDialog alert = alt_bld.create();
-
-            alert.show();
+//            AlertDialog.Builder alt_bld = new AlertDialog.Builder(Info_UI.this);
+//            alt_bld.setTitle("ΠΡΟΣΟΧΗ");
+//
+//            alt_bld.setIcon(R.drawable.ic_alert);
+//            alt_bld.setMessage("Για να βεβαιωθείτε οτι έχει ολοκληρωθεί η διαδικασία" +
+//                    " θα πρέπει να λάβετε μήνυμα επιβεβαίωσης.");
+//            alt_bld.setCancelable(false);
+//            alt_bld.setNeutralButton("Εντάξει", new DialogInterface.OnClickListener (){
+//                @Override
+//                public void onClick(DialogInterface dialog,int which) {
+//                    dialog.dismiss();
+//                    swap_activity(read_from_pref());
+//                }
+//            }
+//            );
+//
+//
+//             AlertDialog alert = alt_bld.create();
+//
+//            alert.show();
 
 
 
