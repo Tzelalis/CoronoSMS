@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Covid19SMS</string>
+    <string name="app_name">CoronoSMS</string>
     <string name="option_icon_desc">Option Icon</string>
     <string name="submit_button">Υποβολή</string>
     <string name="no_selected_item">Παρακαλώ επιλέξτε</string>
@@ -19,7 +19,7 @@
     <string name="tuto_2">Διαδικασία</string>
     <string name="tuto_3">Προσοχή</string>
 
-    <string name="description_1">Η εφαρμογή ταδε είναι εδώ για να σας βοηθήσει! Με ένα κλικ θα μπορείτε να στείλετε το μηνυμα σας!
+    <string name="description_1">Η εφαρμογή CoronoSMS είναι εδώ για να σας βοηθήσει! Με ένα κλικ θα μπορείτε να στείλετε το μηνυμα σας!
         Καλή δύναμη σε όλους και υπομονή! #MENOUMESPITI</string>
     <string name="description_2">Εφόσον συμπληρώσετε και αποθηκεύσετε τα στοιχεία σας, θα  είστε έτοιμοι για να
         διαλέξετε αιτία εξόδου και να αποστείλετε το μήνυμα στο 13033 .</string>

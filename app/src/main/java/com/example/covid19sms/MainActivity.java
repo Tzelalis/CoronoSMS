@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void smsSendMessage(String category) {
-        String destinationAddress = "6940211909";
+        String destinationAddress = "13033";
         String scAddress = null;
         String smsMessage = category + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2];
 

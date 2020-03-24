@@ -14,7 +14,7 @@
         android:layout_height="250dp"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:src="@drawable/slide_three_img" />
+        android:src="@drawable/ic_bell" />
 
     <TextView
         android:id="@+id/textView1"
@@ -24,8 +24,8 @@
         android:textSize="26sp"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:textColor="@color/tuto_title"
-        android:fontFamily="@font/lato_regular"
+        android:textColor="@color/desc_color"
+        android:fontFamily="@font/lato_bold"
         />
 
     <TextView
@@ -38,7 +38,7 @@
         android:gravity="center"
         android:fontFamily="@font/lato_light"
         android:layout_gravity="center"
-        android:textColor="@color/white"
+        android:textColor="@color/desc_color"
         />
 
     <LinearLayout
@@ -58,8 +58,10 @@
             android:text="@string/back"
             android:layout_gravity="bottom|end"
             android:gravity="bottom|end"
+            android:textColor="@color/tuto_title"
+            android:textAlignment="textStart"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            />
+            tools:ignore="RtlCompat" />
 
         <Button
             android:id="@+id/slider_end"
@@ -68,6 +70,7 @@
             android:layout_weight="1"
             android:textSize="20sp"
             android:text="@string/done"
+            android:textColor="@color/tuto_title"
             android:layout_gravity="bottom|end"
             android:gravity="bottom|end"
             style="@style/Widget.MaterialComponents.Button.TextButton"

@@ -339,8 +339,8 @@
             android:layout_gravity="bottom"
             android:backgroundTint="@color/design_default_color_primary"
             app:fabAlignmentMode="center"
-            app:fabCradleMargin="0dp"
-            app:fabCradleRoundedCornerRadius="0dp"
+            app:fabCradleMargin="5dp"
+            app:fabCradleRoundedCornerRadius="5dp"
             app:menu="@menu/bottom_menu" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

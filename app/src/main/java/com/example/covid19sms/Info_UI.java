@@ -12,6 +12,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Layout;
 import android.util.Log;
 import android.view.Gravity;
@@ -49,7 +50,7 @@ public class Info_UI extends AppCompatActivity {
                 "com.example.covid19sms", Context.MODE_PRIVATE);
 
 
-        sharedPref.edit().clear().apply();
+        //sharedPref.edit().clear().apply();
         String change = getIntent().getStringExtra("change");
 
         //gia metabasi kai diatirisi stoixeiwn
@@ -62,11 +63,25 @@ public class Info_UI extends AppCompatActivity {
 
     }
 
-
-        @Override
+    boolean doubleBackToExitPressedOnce = false;
+    @Override
     public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            this.finishAffinity();
             return;
         }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Διπλό κλικ για να αποχωρήσετε", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
 
 
     @Override
