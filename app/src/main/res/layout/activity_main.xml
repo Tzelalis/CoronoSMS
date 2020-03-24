@@ -339,24 +339,12 @@
             android:layout_gravity="bottom"
             android:backgroundTint="@color/design_default_color_primary"
             app:fabAlignmentMode="center"
-            app:fabCradleMargin="0dp"
-            app:fabCradleRoundedCornerRadius="0dp"
+            app:fabCradleMargin="5dp"
+            app:fabCradleRoundedCornerRadius="5dp"
             app:menu="@menu/bottom_menu" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/button"
-            style="@style/Widget.MaterialComponents.FloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="submitInfo"
-            app:backgroundTint="@color/colorPrimary"
-            app:fabCustomSize="@android:dimen/notification_large_icon_width"
-            app:layout_anchor="@id/bar"
-            app:rippleColor="@android:color/background_light"
-            app:srcCompat="@drawable/ic_mail" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/button4"
             style="@style/Widget.MaterialComponents.FloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

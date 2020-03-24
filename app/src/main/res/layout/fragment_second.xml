@@ -46,34 +46,30 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <TextView
+        <Button
             android:id="@+id/slider_two_back"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_gravity="bottom|end"
-            android:gravity="bottom|end"
+            android:textSize="20sp"
             android:text="@string/back"
-            android:textSize="25sp"
-            android:textColor="@color/tuto_title"
-            android:fontFamily="@font/lato_bold"/>
+            android:layout_gravity="bottom|end"
+            android:gravity="bottom|end"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            />
 
 
-        <TextView
+        <Button
             android:id="@+id/slider_two_next"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="@string/next"
             android:layout_gravity="bottom|end"
             android:gravity="bottom|end"
-            android:text="@string/next"
-            android:textSize="25sp"
-            android:textColor="@color/tuto_title"
-            android:fontFamily="@font/lato_bold"/>
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            />
     </LinearLayout>
 
 </LinearLayout>
