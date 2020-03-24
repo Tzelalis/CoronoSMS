@@ -28,9 +28,9 @@
     Υπάρχουν λόγοι για τους οποίους μπορεί να μην λάβετε μήνυμα π.χ.(φραγή σε 5ψήφια).</string>
 
 
-    <string name="next">Επόμενο</string>
-    <string name="back">Προηγούμενο</string>
-    <string name="done">Τέλος</string>
+    <string name="next">ΕΠΟΜΕΝΟ</string>
+    <string name="back">ΠΡΟΗΓΟΥΜΕΝΟ</string>
+    <string name="done">ΤΕΛΟΣ</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
