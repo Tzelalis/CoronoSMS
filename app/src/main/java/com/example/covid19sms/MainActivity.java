@@ -70,6 +70,15 @@ public class MainActivity extends AppCompatActivity {
         floatingActionButton = findViewById(R.id.button);
         bottomAppBar = findViewById(R.id.bar);
         setSupportActionBar(bottomAppBar);
+        BottomAppBar bar = (BottomAppBar) findViewById(R.id.bar);
+        bar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), Info_UI.class);
+                Info_UI.flag = 1;
+                startActivity(intent);
+            }
+        });
         Info_UI.flag = 0;
         personalInfos = new String[3];
 
