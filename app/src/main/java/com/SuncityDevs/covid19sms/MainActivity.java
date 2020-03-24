@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.info_layout);
         dialog.setTitle("Info");
-        Button dialogButton = (Button) dialog.findViewById(R.id.dism_btn);
+        Button dialogButton = (Button) dialog.findViewById(R.id.sasa);
         dialog.show();
         // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
@@ -278,5 +278,5 @@ public class MainActivity extends AppCompatActivity {
         showDialog();
         return true;
     }
-    
+
 }

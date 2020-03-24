@@ -8,7 +8,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
 
             <ImageView
@@ -18,7 +19,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="50dp"
                 android:contentDescription="@string/logo_desc"
-                app:srcCompat="@mipmap/virus_ic_launcher_round" />
+                app:srcCompat="@drawable/ic_info_logo_background" />
 
 
             <LinearLayout
@@ -51,8 +52,10 @@
                 android:layout_height="wrap_content"
                 style="@style/info_texts"
                 android:text="@string/app_name"/>
-
-
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sasa"/>
             </LinearLayout>
 
 
