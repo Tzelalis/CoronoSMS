@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class ThirdFragment extends Fragment {
 
     TextView done;
-    TextView back;
+    //TextView back;
     ViewPager viewPager;
 
 
@@ -47,14 +47,14 @@ public class ThirdFragment extends Fragment {
         });
 
 
-        back = view.findViewById(R.id.slider_three_back);
-        back.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(1);
-            }
-
-        });
+//        back = view.findViewById(R.id.slider_three_back);
+//        back.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                viewPager.setCurrentItem(1);
+//            }
+//
+//        });
 
 
         return view;

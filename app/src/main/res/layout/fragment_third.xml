@@ -47,20 +47,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp">
+        android:layout_marginTop="90dp">
 
 
-        <Button
-            android:id="@+id/slider_three_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:gravity="bottom|end"
-            android:text="@string/back"
-            android:layout_alignParentLeft="true"
-            android:textColor="@color/tuto_title"
-            android:autoSizeTextType="uniform"
-            android:textSize="16sp" />
+<!--        <Button-->
+<!--            android:id="@+id/slider_three_back"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            style="@style/Widget.MaterialComponents.Button.TextButton"-->
+<!--            android:gravity="bottom|end"-->
+<!--            android:text="@string/back"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:textColor="@color/tuto_title"-->
+<!--            android:autoSizeTextType="uniform"-->
+<!--            android:textSize="16sp" />-->
 
         <Button
             android:id="@+id/slider_end"

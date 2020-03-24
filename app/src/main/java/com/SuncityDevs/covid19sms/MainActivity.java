@@ -2,6 +2,7 @@ package com.SuncityDevs.covid19sms;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.telephony.SmsManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
@@ -253,12 +255,27 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.bottom_menu, menu);
         return true;
     }
+
+    public void showDialog() {
+        // custom dialog
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.info_layout);
+        dialog.setTitle("Info");
+        Button dialogButton = (Button) dialog.findViewById(R.id.dism_btn);
+        dialog.show();
+        // if button is clicked, close the custom dialog
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+            }
+        });
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Toast.makeText(MainActivity.this, "ASDAFA", Toast.LENGTH_SHORT).show();
-//            Intent intent = new Intent(getBaseContext(), Info_UI.class);
-//            Info_UI.flag = 1;
-//            startActivity(intent);
-            return true;
+        //Toast.makeText(MainActivity.this, "ASDAFA", Toast.LENGTH_SHORT).show();
+        showDialog();
+        return true;
     }
 }

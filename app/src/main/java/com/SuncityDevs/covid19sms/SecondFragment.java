@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class SecondFragment extends Fragment {
 
     TextView next;
-    TextView back;
+    //TextView back;
     ViewPager viewPager;
 
 
@@ -41,14 +41,14 @@ public class SecondFragment extends Fragment {
         });
 
 
-        back = view.findViewById(R.id.slider_two_back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(0);
-            }
-
-        });
+//        back = view.findViewById(R.id.slider_two_back);
+//        back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                viewPager.setCurrentItem(0);
+//            }
+//
+//        });
 
 
         return view;
