@@ -261,8 +261,6 @@ public class MainActivity extends AppCompatActivity {
         // custom dialog
         final Dialog dialog = new Dialog(this, android.R.style.Theme_Light_NoTitleBar);
         dialog.setContentView(R.layout.info_layout);
-        //dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setTitle("Info");
         Button dialogButton = (Button) dialog.findViewById(R.id.info_close_button);
         dialog.show();
         // if button is clicked, close the custom dialog
