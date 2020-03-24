@@ -49,7 +49,7 @@ public class Info_UI extends AppCompatActivity {
                 "com.example.covid19sms", Context.MODE_PRIVATE);
 
 
-        //sharedPref.edit().clear().apply();
+        sharedPref.edit().clear().apply();
         String change = getIntent().getStringExtra("change");
 
         //gia metabasi kai diatirisi stoixeiwn

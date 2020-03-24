@@ -19,6 +19,8 @@
     <color name="btn_enable">#1103E6</color>
     <color name="white">#FFFFFF</color>
 
-    <color name="tuto_title">#F68B1F</color>
-    <color name="fragment_background">#89B7FF</color>
+    <color name="tuto_title">#FA8713</color>
+    <color name="desc_color">#FFFFFF</color>
+    <color name="fragment_background">#0065FF</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

@@ -85,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 1);
 
 
+
+
     }
 
     @Override
@@ -95,14 +97,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void setSelectedItem(View view) {
 
-        if (this.selectedView == view && this.selectedView.isSelected() == true) {
+        if (this.selectedView == view && this.selectedView.isSelected() == true){
             findViewById(R.id.button).setEnabled(false);
             findViewById(R.id.button).setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimary)));
             this.selectedView.setSelected(false);
             return;
         }
 
-        if (this.selectedView != null) {
+        if (this.selectedView != null){
 
             this.selectedView.setSelected(false);
 
@@ -126,9 +128,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
 
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
             builder.setTitle("Επιβεβαίωση");
-            builder.setMessage("Θέλετε να στείλετε το παρακάτω μήνυμα;\n\n" +
-                    selectedView.getTag().toString() + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2]);
+            builder.setMessage("Θέλετε να στείλετε το μήνυμα;\n\n" +
+                    selectedView.getTag().toString()+" "+personalInfos[0] +" "+personalInfos[1]+" "+personalInfos[2] );
 
             builder.setPositiveButton("Επιβεβαίωση", new DialogInterface.OnClickListener() {
 
@@ -144,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
                     //findViewById(R.id.button).setBackgroundColor(R.color.submitButtondisable);
                     findViewById(R.id.button).setBackground(d);
                     findViewById(R.id.button).setEnabled(false);
+
 
 
                     dialog.dismiss();
@@ -182,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void smsSendMessage(String category) {
-        String destinationAddress = "13033";
+        String destinationAddress = "6940211909";
         String scAddress = null;
         String smsMessage = category + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2];
 
@@ -195,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
         smsManager.sendTextMessage
                 (destinationAddress, scAddress, smsMessage,
                         sentIntent, deliveryIntent);
+
 
 
     }

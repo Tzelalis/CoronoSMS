@@ -8,6 +8,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -15,7 +16,7 @@ import org.w3c.dom.Text;
 
 public class FirstFragment extends Fragment {
 
-    TextView next;
+    Button next;
     ViewPager viewPager;
 
     public FirstFragment() {
