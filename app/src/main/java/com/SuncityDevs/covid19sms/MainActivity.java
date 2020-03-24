@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.info_layout);
         dialog.setTitle("Info");
-        Button dialogButton = (Button) dialog.findViewById(R.id.sasa);
+        Button dialogButton = (Button) dialog.findViewById(R.id.info_close_button);
         dialog.show();
         // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
