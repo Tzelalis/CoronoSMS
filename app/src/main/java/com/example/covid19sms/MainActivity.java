@@ -93,11 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.bottom_menu, menu);
-        return true;
-    }
 
     public void setSelectedItem(View view) {
 
@@ -130,66 +125,66 @@ public class MainActivity extends AppCompatActivity {
             mToast = Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.show();
         } else {
+            if(checkForSmsPermission()){
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Επιβεβαίωση");
+                builder.setMessage("Θέλετε να στείλετε το μήνυμα;\n\n" +
+                        selectedView.getTag().toString() + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2]);
 
-            builder.setTitle("Επιβεβαίωση");
-            builder.setMessage("Θέλετε να στείλετε το μήνυμα;\n\n" +
-                    selectedView.getTag().toString() + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2]);
+                builder.setPositiveButton("Επιβεβαίωση", new DialogInterface.OnClickListener() {
 
-            builder.setPositiveButton("Επιβεβαίωση", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Do nothing but close the dialog
 
-                public void onClick(DialogInterface dialog, int which) {
-                    // Do nothing but close the dialog
+                        String category = selectedView.getTag().toString();
 
-                    String category = selectedView.getTag().toString();
+                        MainActivity.this.smsSendMessage(category);
 
-                    MainActivity.this.smsSendMessage(category);
-
-                    final Drawable e = findViewById(R.id.button).getBackground();
-                    final Drawable d = MainActivity.this.getDrawable(R.drawable.round_disabled);
-                    //findViewById(R.id.button).setBackgroundColor(R.color.submitButtondisable);
-                    findViewById(R.id.button).setBackground(d);
-                    findViewById(R.id.button).setEnabled(false);
+                        final Drawable e = findViewById(R.id.button).getBackground();
+                        final Drawable d = MainActivity.this.getDrawable(R.drawable.round_disabled);
+                        //findViewById(R.id.button).setBackgroundColor(R.color.submitButtondisable);
+                        findViewById(R.id.button).setBackground(d);
+                        findViewById(R.id.button).setEnabled(false);
 
 
-                    dialog.dismiss();
-                    //Toast.makeText(MainActivity.this,"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                        //Toast.makeText(MainActivity.this,"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT).show();
 
-                    findViewById(R.id.button).postDelayed(new Runnable() {
+                        findViewById(R.id.button).postDelayed(new Runnable() {
 
-                        @Override
-                        public void run() {
-                            findViewById(R.id.button).setEnabled(true);
-                            findViewById(R.id.button).setBackground(e);
-                        }
-                    }, 2000);
+                            @Override
+                            public void run() {
+                                findViewById(R.id.button).setEnabled(true);
+                                findViewById(R.id.button).setBackground(e);
+                            }
+                        }, 2000);
 
-                }
-            });
+                    }
+                });
 
-            builder.setNegativeButton("Ακύρωση", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("Ακύρωση", new DialogInterface.OnClickListener() {
 
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
 //                    Intent intent = new Intent(getBaseContext(), Info_UI.class);
 //                    Info_UI.flag = 1;
 //                    startActivity(intent);
-                }
-            });
+                    }
+                });
 
-            AlertDialog alert = builder.create();
-            alert.setCancelable(true);
-            alert.show();
-
+                AlertDialog alert = builder.create();
+                alert.setCancelable(true);
+                alert.show();
+            }
 
         }
 
     }
 
     private void smsSendMessage(String category) {
-        String destinationAddress = "6987379029";
+        String destinationAddress = "13033";
         String scAddress = null;
         String smsMessage = category + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2];
 
@@ -203,11 +198,11 @@ public class MainActivity extends AppCompatActivity {
                         sentIntent, deliveryIntent);
     }
 
-    private void checkForSmsPermission() {
+    private boolean checkForSmsPermission() {
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.SEND_SMS) !=
                 PackageManager.PERMISSION_GRANTED) {
-            //Toast.makeText(this, "DEN EXEIS DIKAIWMA", Toast.LENGTH_SHORT);
+
             // Permission not yet granted. Use requestPermissions().
             // MY_PERMISSIONS_REQUEST_SEND_SMS is an
             // app-defined int constant. The callback method gets the
@@ -215,8 +210,9 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.SEND_SMS},
                     MY_PERMISSIONS_REQUEST_SEND_SMS);
+            return false;
         } else {
-            //Toast.makeText(this, "EXEIS DIKAIWMA", Toast.LENGTH_SHORT);
+            return true;
         }
     }
 
@@ -231,12 +227,10 @@ public class MainActivity extends AppCompatActivity {
 
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-                    //Toast.makeText(this, "thn phraaaa", Toast.LENGTH_SHORT).show();
                 } else {
-
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    Toast.makeText(MainActivity.this, "Permission denied to read your External storage", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Το μήνυμα δε μπορεί να σταλεί δίχως την άδεια για το τη χρήση SMS.", Toast.LENGTH_SHORT).show();
                 }
                 return;
             }
@@ -244,5 +238,11 @@ public class MainActivity extends AppCompatActivity {
             // other 'case' lines to check for other
             // permissions this app might request
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_menu, menu);
+        return true;
     }
 }
