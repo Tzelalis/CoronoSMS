@@ -30,10 +30,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="tzelalis">Τζελαλής Παναγιώτης</string>
-    <string name="xhino">Σταύρος Μουλλαυμερι</string>
+    <string name="xhino">Μουλλαυμερι Σταύρος</string>
     <string name="rizik">Ριζικιανός Γιώργος</string>
     <string name="iko">Οικονομίδης Βασίλης</string>
-    <string name="app_email">suncitydevs@gmail.com</string>
+    <string name="contact_email">suncitydevs@gmail.com</string>
     <string name="logo_desc">Logo Icon</string>
-
+    <string name="dev_title">Developers</string>
+    <string name="special_thanks_title">Special Thanks</string>
+    <string name="contact_info_title">Contact Info</string>
 </resources>
