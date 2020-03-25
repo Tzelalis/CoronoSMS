@@ -9,13 +9,18 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
@@ -80,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
         String info = getIntent().getStringExtra("person_info");
 
         findViewById(R.id.button).setEnabled(false);
-
 
         info = info.replace("\"", "");
         info = info.replace("[", "");
@@ -190,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog alert = builder.create();
                 alert.setCancelable(true);
                 alert.show();
+
             }
 
         }
@@ -265,6 +270,11 @@ public class MainActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.info_layout);
         Button dialogButton = (Button) dialog.findViewById(R.id.info_close_button);
         dialog.show();
+
+
+//        TextView t2 = dialog.findViewById(R.id.textView17);
+//        t2.setMovementMethod(LinkMovementMethod.getInstance());
+
         // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -273,6 +283,8 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
+
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
