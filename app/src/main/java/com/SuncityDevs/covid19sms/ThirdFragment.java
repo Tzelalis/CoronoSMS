@@ -35,18 +35,15 @@ public class ThirdFragment extends Fragment {
 
         done = view.findViewById(R.id.slider_end);
 
-        done.setOnClickListener(new View.OnClickListener(){
+        done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((Tutorial) getActivity()).once_in_a_life_time();
-
-//                Intent intent = new Intent(getActivity(), Info_UI.class);
-//                Tutorial.first_time = "1";
-//
-//                startActivity(intent);
+                viewPager.setCurrentItem(3);
             }
 
         });
+
+
 
 
 //        back = view.findViewById(R.id.slider_three_back);

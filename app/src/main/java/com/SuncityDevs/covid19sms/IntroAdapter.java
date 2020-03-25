@@ -19,6 +19,8 @@ public class IntroAdapter extends FragmentPagerAdapter {
                 return new SecondFragment();
             case 2:
                 return new ThirdFragment();
+            case 3:
+                return new PolicyFragment();
             default:
                 return null;
         }
@@ -27,6 +29,6 @@ public class IntroAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }
