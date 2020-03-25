@@ -28,8 +28,7 @@
                     information that I request will be
                     retained on your device and is not collected by me in any way.                     
                   </p><p>
-                    These data are only sent to special number 13033, the service provided to the citizen to send a free 
-                    telecommunication message (sms) directly from the interested person's cell phone whenever the citizen leaves his home.
+                    These data are sent only to the emergency number 13033. This service is provided to the Greek citizens in order to send a free telecommunication message (SMS) directly from the interested person's cell phone whenever the citizen wants to leave his home.
                   </p><p>
                     The app does use third party services that may collect
                     information used to identify you.
