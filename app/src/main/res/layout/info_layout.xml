@@ -190,7 +190,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="flaticon.com" />
+                    android:text="@string/flat_icon_site" />
             </LinearLayout>
 
             <LinearLayout
@@ -229,7 +229,10 @@
                     android:layout_marginStart="20dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/contact_email" />
+                    android:text="@string/contact_email"
+                    android:linksClickable="true"
+                    android:autoLink="email"
+                    />
 
 
             </LinearLayout>
@@ -241,19 +244,26 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_marginStart="20dp"
-                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="@string/reason"
                     android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/privacy_policy_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/privacy_policy_link"
+                    android:autoLink="web"/>
 
 
             </LinearLayout>
