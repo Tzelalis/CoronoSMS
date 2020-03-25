@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         floatingActionButton = findViewById(R.id.button);
         bottomAppBar = findViewById(R.id.bar);
         info_button  = findViewById(R.id.menuChangeInfo);
@@ -74,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Info_UI.flag = 0;
-        ThirdFragment.privacy_flag = 1;
         personalInfos = new String[3];
 
         String info = getIntent().getStringExtra("person_info");

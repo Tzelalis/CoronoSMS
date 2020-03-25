@@ -44,23 +44,22 @@ public class Tutorial extends AppCompatActivity {
 
     public void once_in_a_life_time(){
 
-        sharedPref.edit().putString(flag, "1").apply();
         final Dialog dialog = new Dialog(this, android.R.style.Theme_Light_NoTitleBar);
         dialog.setContentView(R.layout.info_layout);
         Button dialogButton = (Button) dialog.findViewById(R.id.info_close_button);
         dialog.show();
+        Intent intent = new Intent(getApplicationContext(),Info_UI.class );
+
         // if button is clicked, close the custom dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Info_UI.class );
-                startActivity(intent);
+                sharedPref.edit().putString(flag, "1").apply();
                 dialog.dismiss();
-
             }
         });
+        startActivity(intent);
 
     }
-
 
 }
