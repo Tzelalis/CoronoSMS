@@ -1,4 +1,3 @@
-# CoronoSMS
 <h2>Privacy Policy</h2> <p>
                     Suncity Devs built the CoronoSMS app as
                     a Free app. This SERVICE is provided by
