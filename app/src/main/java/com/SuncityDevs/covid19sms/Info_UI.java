@@ -35,10 +35,6 @@ public class Info_UI extends AppCompatActivity {
 
         sharedPref = this.getSharedPreferences(
                 "com.example.covid19sms", Context.MODE_PRIVATE);
-        if(ThirdFragment.privacy_flag != 1){
-            showDialog();
-            ThirdFragment.privacy_flag = 1;
-        }
 
         //sharedPref.edit().clear().apply();
         String change = getIntent().getStringExtra("change");
@@ -201,24 +197,6 @@ public class Info_UI extends AppCompatActivity {
 
     public String getKey_address() {
         return key_address;
-    }
-    public void showDialog() {
-        // custom dialog
-        final Dialog dialog = new Dialog(this, android.R.style.Theme_Light_NoTitleBar);
-        dialog.setContentView(R.layout.info_layout);
-        Button dialogButton = (Button) dialog.findViewById(R.id.info_close_button);
-        dialog.show();
-        // if button is clicked, close the custom dialog
-        dialogButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog.dismiss();
-
-
-
-            }
-        });
     }
 
 
