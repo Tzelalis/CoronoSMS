@@ -9,10 +9,13 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Tutorial extends AppCompatActivity {
 
@@ -53,6 +56,16 @@ public class Tutorial extends AppCompatActivity {
         sharedPref.edit().putString(flag, "1").apply();
         Intent intent = new Intent(getApplicationContext(),Info_UI.class );
         startActivity(intent);
+
+        // if button is clicked, close the custom dialog
+//        dialogButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                sharedPref.edit().putString(flag, "1").apply();
+//                dialog.dismiss();
+//            }
+//        });
+//        startActivity(intent);
 //
 //        final Dialog dialog = new Dialog(this, android.R.style.Theme_Light_NoTitleBar);
 //        dialog.setContentView(R.layout.info_layout);

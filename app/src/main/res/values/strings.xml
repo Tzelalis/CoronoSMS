@@ -46,5 +46,6 @@
 <!--privacy policy dialog strings    -->
     <string name="privacy_policy_checkbox">Αποδέχομαι τους όρους χρήσης</string>
     <string name="privacy_policy_button">Επομενο</string>
-    <string name="privacy_policy_string"></string>
+    <string name="privacy_policy_string">d</string>
+    <string name="test"></string>
 </resources>
