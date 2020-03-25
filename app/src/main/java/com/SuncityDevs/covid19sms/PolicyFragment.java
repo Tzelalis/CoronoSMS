@@ -34,9 +34,9 @@ public class PolicyFragment extends Fragment {
 
 
 
-        View view = inflater.inflate(R.layout.info_layout, container, false);
+        View view = inflater.inflate(R.layout.privacy_policy_layout, container, false);
         viewPager = getActivity().findViewById(R.id.viewPager);
-         btn = view.findViewById(R.id.info_close_button);
+         btn = view.findViewById(R.id.privacy_policy_button);
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
