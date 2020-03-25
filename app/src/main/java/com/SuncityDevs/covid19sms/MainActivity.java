@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Info_UI.flag = 0;
+        ThirdFragment.privacy_flag = 1;
         personalInfos = new String[3];
 
         String info = getIntent().getStringExtra("person_info");
@@ -91,9 +92,6 @@ public class MainActivity extends AppCompatActivity {
         //Log.v("covid19", parts[0] +" "+ parts[1]+" "+parts[2]);
         //Toast.makeText(this.getApplicationContext(), s, Toast.LENGTH_SHORT).show();
 
-        ActivityCompat.requestPermissions(MainActivity.this,
-                new String[]{Manifest.permission.SEND_SMS},
-                1);
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -136,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
             mToast = Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.show();
         } else {
+            ActivityCompat.requestPermissions(MainActivity.this,
+                    new String[]{Manifest.permission.SEND_SMS},
+                    1);
+
             if (checkForSmsPermission()) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 

@@ -2,6 +2,7 @@ package com.SuncityDevs.covid19sms;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,12 +27,11 @@ public class Info_UI extends AppCompatActivity {
     //private String flag = "com.example.covid19sms.address";
     public static int flag = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
-
+        ThirdFragment.privacy_flag = 1;
 
         sharedPref = this.getSharedPreferences(
                 "com.example.covid19sms", Context.MODE_PRIVATE);
@@ -45,7 +46,6 @@ public class Info_UI extends AppCompatActivity {
         if (flag!=1){
             swap_activity(read_from_pref());
         }
-
 
     }
 

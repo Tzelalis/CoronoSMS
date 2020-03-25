@@ -1,5 +1,6 @@
 package com.SuncityDevs.covid19sms;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -16,12 +18,11 @@ public class ThirdFragment extends Fragment {
     TextView done;
     //TextView back;
     ViewPager viewPager;
-
+    public static int privacy_flag = 0;
 
     public ThirdFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
@@ -33,11 +34,12 @@ public class ThirdFragment extends Fragment {
 
 
         done = view.findViewById(R.id.slider_end);
+
         done.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                ((Tutorial) getActivity()).once_in_a_life_time();
 
-                ((Tutorial)getActivity()).once_in_a_life_time();
 //                Intent intent = new Intent(getActivity(), Info_UI.class);
 //                Tutorial.first_time = "1";
 //
@@ -59,4 +61,5 @@ public class ThirdFragment extends Fragment {
 
         return view;
     }
+
 }
