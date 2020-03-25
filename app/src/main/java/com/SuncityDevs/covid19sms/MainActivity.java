@@ -138,10 +138,6 @@ public class MainActivity extends AppCompatActivity {
             mToast = Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.show();
         } else {
-            ActivityCompat.requestPermissions(MainActivity.this,
-                    new String[]{Manifest.permission.SEND_SMS},
-                    1);
-
             if (checkForSmsPermission()) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 

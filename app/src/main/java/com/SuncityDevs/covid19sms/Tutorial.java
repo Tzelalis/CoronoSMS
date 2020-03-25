@@ -1,8 +1,10 @@
 package com.SuncityDevs.covid19sms;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -21,7 +23,6 @@ public class Tutorial extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         sharedPref = this.getSharedPreferences(
                 "com.example.covid19sms", Context.MODE_PRIVATE);
 
@@ -32,6 +33,10 @@ public class Tutorial extends AppCompatActivity {
             startActivity(intent);
         }
         else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.SEND_SMS},
+                    1);
+
             setContentView(R.layout.activity_tutorial);
 
             viewPager = findViewById(R.id.viewPager);
