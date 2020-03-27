@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -138,60 +139,62 @@ public class MainActivity extends AppCompatActivity {
             mToast = Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT);
             mToast.show();
         } else {
-            if (checkForSmsPermission()) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-                builder.setTitle("Επιβεβαίωση");
-                builder.setMessage("Θέλετε να στείλετε το μήνυμα;\n\n" +
-                        selectedView.getTag().toString() + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2]);
-
-                builder.setPositiveButton("Επιβεβαίωση", new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        // Do nothing but close the dialog
-
-                        String category = selectedView.getTag().toString();
-
-                        MainActivity.this.smsSendMessage(category);
-
-                        final Drawable e = findViewById(R.id.button).getBackground();
-                        final Drawable d = MainActivity.this.getDrawable(R.drawable.round_disabled);
-                        //findViewById(R.id.button).setBackgroundColor(R.color.submitButtondisable);
-                        findViewById(R.id.button).setBackground(d);
-                        findViewById(R.id.button).setEnabled(false);
-
-
-                        dialog.dismiss();
-                        //Toast.makeText(MainActivity.this,"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT).show();
-
-                        findViewById(R.id.button).postDelayed(new Runnable() {
-
-                            @Override
-                            public void run() {
-                                findViewById(R.id.button).setEnabled(true);
-                                findViewById(R.id.button).setBackground(e);
-                            }
-                        }, 2000);
-
-                    }
-                });
-
-                builder.setNegativeButton("Ακύρωση", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-//                    Intent intent = new Intent(getBaseContext(), Info_UI.class);
-//                    Info_UI.flag = 1;
-//                    startActivity(intent);
-                    }
-                });
-
-                AlertDialog alert = builder.create();
-                alert.setCancelable(true);
-                alert.show();
-
-            }
+            String category = selectedView.getTag().toString();
+            MainActivity.this.smsSendMessage(category);
+//            if (checkForSmsPermission()) {
+//                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//
+//                builder.setTitle("Επιβεβαίωση");
+//                builder.setMessage("Θέλετε να στείλετε το μήνυμα;\n\n" +
+//                        selectedView.getTag().toString() + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2]);
+//
+//                builder.setPositiveButton("Επιβεβαίωση", new DialogInterface.OnClickListener() {
+//
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // Do nothing but close the dialog
+//
+//                        String category = selectedView.getTag().toString();
+//
+//                        MainActivity.this.smsSendMessage(category);
+//
+//                        final Drawable e = findViewById(R.id.button).getBackground();
+//                        final Drawable d = MainActivity.this.getDrawable(R.drawable.round_disabled);
+//                        //findViewById(R.id.button).setBackgroundColor(R.color.submitButtondisable);
+//                        findViewById(R.id.button).setBackground(d);
+//                        findViewById(R.id.button).setEnabled(false);
+//
+//
+//                        dialog.dismiss();
+//                        //Toast.makeText(MainActivity.this,"Το μήνυμα σας στάλθηκε!", Toast.LENGTH_SHORT).show();
+//
+//                        findViewById(R.id.button).postDelayed(new Runnable() {
+//
+//                            @Override
+//                            public void run() {
+//                                findViewById(R.id.button).setEnabled(true);
+//                                findViewById(R.id.button).setBackground(e);
+//                            }
+//                        }, 2000);
+//
+//                    }
+//                });
+//
+//                builder.setNegativeButton("Ακύρωση", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+////                    Intent intent = new Intent(getBaseContext(), Info_UI.class);
+////                    Info_UI.flag = 1;
+////                    startActivity(intent);
+//                    }
+//                });
+//
+//                AlertDialog alert = builder.create();
+//                alert.setCancelable(true);
+//                alert.show();
+//
+//            }
 
         }
 
@@ -202,14 +205,21 @@ public class MainActivity extends AppCompatActivity {
         String scAddress = null;
         String smsMessage = category + " " + personalInfos[0] + " " + personalInfos[1] + " " + personalInfos[2];
 
-        // Set pending intents to broadcast
-        // when message sent and when delivered, or set to null.
-        PendingIntent sentIntent = null, deliveryIntent = null;
-        // Use SmsManager.
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage
-                (destinationAddress, scAddress, smsMessage,
-                        sentIntent, deliveryIntent);
+
+
+            Uri uri = Uri.parse("smsto:13033");
+            Intent it = new Intent(Intent.ACTION_SENDTO, uri);
+            it.putExtra("sms_body", smsMessage);
+            startActivity(it);
+
+//        // Set pending intents to broadcast
+//        // when message sent and when delivered, or set to null.
+//        PendingIntent sentIntent = null, deliveryIntent = null;
+//        // Use SmsManager.
+//        SmsManager smsManager = SmsManager.getDefault();
+//        smsManager.sendTextMessage
+//                (destinationAddress, scAddress, smsMessage,
+//                        sentIntent, deliveryIntent);
     }
 
     private boolean checkForSmsPermission() {

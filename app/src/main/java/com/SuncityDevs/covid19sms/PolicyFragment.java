@@ -40,6 +40,7 @@ public class PolicyFragment extends Fragment {
 
 
         View view = inflater.inflate(R.layout.privacy_policy_layout, container, false);
+
         viewPager = getActivity().findViewById(R.id.viewPager);
         btn = view.findViewById(R.id.privacy_policy_button);
         checkBox = view.findViewById(R.id.checkBox);
