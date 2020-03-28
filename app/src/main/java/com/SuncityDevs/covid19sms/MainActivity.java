@@ -222,47 +222,47 @@ public class MainActivity extends AppCompatActivity {
 //                        sentIntent, deliveryIntent);
     }
 
-    private boolean checkForSmsPermission() {
-        if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.SEND_SMS) !=
-                PackageManager.PERMISSION_GRANTED) {
+//    private boolean checkForSmsPermission() {
+//        if (ActivityCompat.checkSelfPermission(this,
+//                Manifest.permission.SEND_SMS) !=
+//                PackageManager.PERMISSION_GRANTED) {
+//
+//            // Permission not yet granted. Use requestPermissions().
+//            // MY_PERMISSIONS_REQUEST_SEND_SMS is an
+//            // app-defined int constant. The callback method gets the
+//            // result of the request.
+//            ActivityCompat.requestPermissions(this,
+//                    new String[]{Manifest.permission.SEND_SMS},
+//                    MY_PERMISSIONS_REQUEST_SEND_SMS);
+//            return false;
+//        } else {
+//            return true;
+//        }
+//    }
 
-            // Permission not yet granted. Use requestPermissions().
-            // MY_PERMISSIONS_REQUEST_SEND_SMS is an
-            // app-defined int constant. The callback method gets the
-            // result of the request.
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.SEND_SMS},
-                    MY_PERMISSIONS_REQUEST_SEND_SMS);
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case 1: {
-
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
-                } else {
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
-                    Toast.makeText(MainActivity.this, "Το μήνυμα δε μπορεί να σταλεί δίχως την άδεια για το τη χρήση SMS.", Toast.LENGTH_SHORT).show();
-                }
-                return;
-            }
-
-            // other 'case' lines to check for other
-            // permissions this app might request
-        }
-    }
+//    public void onRequestPermissionsResult(int requestCode,
+//                                           String permissions[], int[] grantResults) {
+//        switch (requestCode) {
+//            case 1: {
+//
+//                // If request is cancelled, the result arrays are empty.
+//                if (grantResults.length > 0
+//                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//
+//                    // permission was granted, yay! Do the
+//                    // contacts-related task you need to do.
+//                } else {
+//                    // permission denied, boo! Disable the
+//                    // functionality that depends on this permission.
+//                    Toast.makeText(MainActivity.this, "Το μήνυμα δε μπορεί να σταλεί δίχως την άδεια για το τη χρήση SMS.", Toast.LENGTH_SHORT).show();
+//                }
+//                return;
+//            }
+//
+//            // other 'case' lines to check for other
+//            // permissions this app might request
+//        }
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

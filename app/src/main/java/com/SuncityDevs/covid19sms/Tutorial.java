@@ -36,9 +36,9 @@ public class Tutorial extends AppCompatActivity {
             startActivity(intent);
         }
         else {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.SEND_SMS},
-                    1);
+//            ActivityCompat.requestPermissions(this,
+//                    new String[]{Manifest.permission.SEND_SMS},
+//                    1);
 
             setContentView(R.layout.activity_tutorial);
 
