@@ -38,8 +38,7 @@ public class ThirdFragment extends Fragment {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((Tutorial)getActivity()).once_in_a_life_time();
-//                viewPager.setCurrentItem(3);
+                viewPager.setCurrentItem(3);
             }
 
         });
