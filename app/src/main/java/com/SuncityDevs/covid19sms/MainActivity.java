@@ -41,9 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     private SharedPreferences sharedPref;
-    private String key_first_name = "com.example.covid19sms.first_name";
-    private String key_last_name = "com.example.covid19sms.last_name";
-    private String key_address = "com.example.covid19sms.address";
+
     private View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,72 +55,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-
-
-    public void write_to_pref(View view) {
-
-        //write
-        Log.v("covid19", "save_btn_pressed");
-
-        TextView firstname = view.findViewById(R.id.et_name);
-        TextView lastname = view.findViewById(R.id.et_last_name);
-        TextView address = view.findViewById(R.id.et_address);
-
-        String firstname_text = firstname.getText().toString();
-        String lastname_text = lastname.getText().toString();
-        String address_text = address.getText().toString();
-
-        sharedPref.edit().putString(key_first_name, firstname_text).apply();
-        sharedPref.edit().putString(key_last_name, lastname_text).apply();
-        sharedPref.edit().putString(key_address, address_text).apply();
-
-
-        if (!(firstname_text.equals("") || lastname_text.equals("") || address_text.equals(""))) {
-            Log.v("covid19", "no empty values");
-
-            swap_activity(read_from_pref());
-        } else {
-            Log.v("covid19", "empty values");
-
-            Toast.makeText(this.getApplicationContext(), R.string.err_toast_info_missing_gr, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-        public String read_from_pref() {
-
-            String read_firstname = sharedPref.getString(key_first_name, "");
-            String read_surname = sharedPref.getString(key_last_name, "");
-            String read_address = sharedPref.getString(key_address, "");
-
-            if (!(read_address.equals("") || read_firstname.equals("") || read_surname.equals("")) ){
-                JSONArray json = new JSONArray();
-                json.put(read_firstname);
-                json.put(read_surname);
-                json.put(read_address);
-                return json.toString();
-            } else {
-                return null;
-            }
-        }
-
-
-        public void fill_fields_with_prefs(){
-
-
-        TextView firstname = view.findViewById(R.id.et_name);
-        TextView lastname = view.findViewById(R.id.et_last_name);
-        TextView address = view.findViewById(R.id.et_address);
-
-        firstname.setText(sharedPref.getString(key_first_name, ""));
-        lastname.setText(sharedPref.getString(key_last_name, ""));
-        address.setText(sharedPref.getString(key_address, ""));
-
-    }
-    public void swap_activity(String info) {
-
-        if (info != null) {
-            viewPager.setCurrentItem(1);
-        }
 
 
     }
@@ -331,4 +263,4 @@ public class MainActivity extends AppCompatActivity {
 //        return true;
 //    }
 
-}
+

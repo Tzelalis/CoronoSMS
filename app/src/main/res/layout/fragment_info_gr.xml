@@ -141,7 +141,7 @@
         </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_save"
-            android:onClick="write_to_pref"
+
             style="@style/Widget.MaterialComponents.FloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
