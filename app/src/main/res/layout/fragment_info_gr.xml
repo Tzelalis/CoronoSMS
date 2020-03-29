@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Theme.AppCompat.Light.NoActionBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/WelcomeUi"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Info_UI"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/home"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+
+            <!--        <TextView-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="80dp"-->
+            <!--            android:text="@string/title"-->
+            <!--            android:textSize="30sp"-->
+            <!--            android:textColor="@color/colorPrimary"-->
+            <!--            />-->
+
+            <!--        <EditText-->
+            <!--            android:id="@+id/et_name"-->
+            <!--            android:layout_marginTop="70dp"-->
+            <!--            style="@style/Widget.AppCompat.EditText"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="50dp"-->
+            <!--            android:scrollHorizontally="true"-->
+            <!--            android:inputType="text"-->
+            <!--            android:maxLines="1"-->
+            <!--            android:hint="@string/first_name_gr" />-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/first_name_gr"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollHorizontally="true"
+                    android:maxLines="1"
+                    android:inputType="text"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/last_name_gr"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollHorizontally="true"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/address_gr"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollHorizontally="true"
+                    android:maxLines="1"
+                    android:inputType="text"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--        <EditText-->
+            <!--            android:id="@+id/et_last_name"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="50dp"-->
+            <!--            android:maxLines="1"-->
+            <!--            android:inputType="text"-->
+            <!--            android:scrollHorizontally="true"-->
+            <!--            android:layout_marginTop="40dp"-->
+            <!--            android:hint="@string/last_name_gr" />-->
+
+            <!--        <EditText-->
+            <!--            android:id="@+id/et_address"-->
+            <!--            android:scrollHorizontally="true"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:maxLines="1"-->
+            <!--            android:inputType="text"-->
+            <!--            android:layout_height="70dp"-->
+            <!--            android:layout_marginTop="40dp"-->
+            <!--            android:hint="@string/address_gr"-->
+
+            <!--            />-->
+
+            <!--        <Button-->
+            <!--            android:id="@+id/btn_save"-->
+            <!--            android:layout_width="220dp"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="70dp"-->
+            <!--            android:background="@drawable/round"-->
+            <!--            android:onClick="write_to_pref"-->
+            <!--            android:shadowColor="@color/btn_shadow"-->
+            <!--            android:text="Αποθήκευση "-->
+            <!--            android:textColor="@android:color/white"-->
+            <!--            android:textSize="18sp"-->
+
+            <!--            />-->
+
+
+        </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_save"
+            android:onClick="write_to_pref"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="50dp"
+            app:fabCustomSize="65dp"
+            app:srcCompat="@drawable/ic_foursquare_check_in"
+            app:maxImageSize="32dp"
+            app:backgroundTint="@android:color/holo_green_light"
+            app:rippleColor="@android:color/background_light"
+            />
+    </FrameLayout>
+</RelativeLayout>

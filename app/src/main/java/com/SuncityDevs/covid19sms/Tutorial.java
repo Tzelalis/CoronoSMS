@@ -19,8 +19,9 @@ import android.widget.TextView;
 
 public class Tutorial extends AppCompatActivity {
 
-    public static String first_time = "0";
     private SharedPreferences sharedPref;
+
+    public static String first_time = "0";
     private String flag = "com.example.covid19sms.flag";
     ViewPager viewPager;
     @Override
@@ -32,7 +33,7 @@ public class Tutorial extends AppCompatActivity {
         Log.v("covid19",  first_time);
 
         if ( sharedPref.getString(flag, "").equals("1")){
-            Intent intent = new Intent(this,Info_UI.class );
+            Intent intent = new Intent(this,MainActivity.class );
             startActivity(intent);
         }
         else {
@@ -54,7 +55,7 @@ public class Tutorial extends AppCompatActivity {
 
 
         sharedPref.edit().putString(flag, "1").apply();
-        Intent intent = new Intent(getApplicationContext(),Info_UI.class );
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class );
         startActivity(intent);
 
         // if button is clicked, close the custom dialog

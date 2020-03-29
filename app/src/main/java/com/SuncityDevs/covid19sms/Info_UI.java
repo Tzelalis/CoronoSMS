@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import org.json.JSONArray;
 
+import static com.SuncityDevs.covid19sms.Greece.Info_UI.flag;
+
 public class Info_UI extends AppCompatActivity {
 
     private SharedPreferences sharedPref;
@@ -25,7 +27,7 @@ public class Info_UI extends AppCompatActivity {
     private String key_last_name = "com.example.covid19sms.last_name";
     private String key_address = "com.example.covid19sms.address";
     //private String flag = "com.example.covid19sms.address";
-    public static int flag = 0;
+    //public static int flag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

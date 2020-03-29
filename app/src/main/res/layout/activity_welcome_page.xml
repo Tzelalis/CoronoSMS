@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/Theme.AppCompat.Light.NoActionBar"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -42,39 +43,85 @@
 <!--            android:textColor="@color/colorPrimary"-->
 <!--            />-->
 
-        <EditText
-            android:id="@+id/et_name"
-            android:layout_marginTop="70dp"
-            style="@style/Widget.AppCompat.EditText"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:scrollHorizontally="true"
-            android:inputType="text"
-            android:maxLines="1"
-            android:hint="@string/first_name_gr" />
-
-
-        <EditText
-            android:id="@+id/et_last_name"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:maxLines="1"
-            android:inputType="text"
-            android:scrollHorizontally="true"
+<!--        <EditText-->
+<!--            android:id="@+id/et_name"-->
+<!--            android:layout_marginTop="70dp"-->
+<!--            style="@style/Widget.AppCompat.EditText"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:scrollHorizontally="true"-->
+<!--            android:inputType="text"-->
+<!--            android:maxLines="1"-->
+<!--            android:hint="@string/first_name_gr" />-->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="40dp"
-            android:hint="@string/last_name_gr" />
-
-        <EditText
-            android:id="@+id/et_address"
-            android:scrollHorizontally="true"
             android:layout_width="match_parent"
-            android:maxLines="1"
-            android:inputType="text"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/first_name_gr"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="true"
+                android:maxLines="1"
+                android:inputType="text"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/last_name_gr"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="true"
+                android:maxLines="1"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="@string/address_gr"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="true"
+                android:maxLines="1"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-            />
+<!--        <EditText-->
+<!--            android:id="@+id/et_last_name"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:maxLines="1"-->
+<!--            android:inputType="text"-->
+<!--            android:scrollHorizontally="true"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:hint="@string/last_name_gr" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/et_address"-->
+<!--            android:scrollHorizontally="true"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:maxLines="1"-->
+<!--            android:inputType="text"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:hint="@string/address_gr"-->
+
+<!--            />-->
 
 <!--        <Button-->
 <!--            android:id="@+id/btn_save"-->

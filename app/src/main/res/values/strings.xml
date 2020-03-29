@@ -41,9 +41,9 @@
     <string name="info_title">CoronoSMS</string>
     <string name="flat_icon_site">flaticon.com</string>
     <string name="privacy_policy_link">tzelalis.github.io/CoronoSMS/</string>
-<!--    <string name="privacy_policy_link"><a href='https://tzelalis.github.io/CoronoSMS/'>Pricacy Policy</a></string>-->
+    <!--    <string name="privacy_policy_link"><a href='https://tzelalis.github.io/CoronoSMS/'>Pricacy Policy</a></string>-->
 
-<!--privacy policy dialog strings    -->
+    <!--privacy policy dialog strings    -->
     <string name="privacy_policy_checkbox">Αποδέχομαι τους όρους χρήσης</string>
     <string name="privacy_policy_button">Επομενο</string>
     <string name="privacy_policy_string">d</string>
