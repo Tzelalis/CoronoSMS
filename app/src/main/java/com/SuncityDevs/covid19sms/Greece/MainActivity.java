@@ -54,22 +54,22 @@ public class MainActivity extends Fragment {
             }
         });
 
-        //flag = 0;
-        //personalInfos = new String[3];
+        flag = 0;
+        personalInfos = new String[3];
 
-        //String info = this.getActivity().getIntent().getStringExtra("person_info");
-
-        //view.findViewById(R.id.button).setEnabled(false);
-
-        //info = info.replace("\"", "");
-        //info = info.replace("[", "");
-       // info = info.replace("]", "");
-
-        //personalInfos = info.split(",");
-
-        //String s = parts[0] +" "+ parts[1]+" "+parts[2];
-        //Log.v("covid19", parts[0] +" "+ parts[1]+" "+parts[2]);
-        //Toast.makeText(this.getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+//        String info = this.getActivity().getIntent().getStringExtra("person_info");
+//
+//        view.findViewById(R.id.button).setEnabled(false);
+//
+//        info = info.replace("\"", "");
+//        info = info.replace("[", "");
+//        info = info.replace("]", "");
+//
+//        personalInfos = info.split(",");
+//
+//        //String s = parts[0] +" "+ parts[1]+" "+parts[2];
+//        //Log.v("covid19", parts[0] +" "+ parts[1]+" "+parts[2]);
+//        Toast.makeText(this.getActivity().getApplicationContext(), "s", Toast.LENGTH_SHORT).show();
 
 
 

@@ -48,6 +48,7 @@ public class Info_UI extends Fragment {
         view =  inflater.inflate(R.layout.fragment_info_gr, container, false);
         viewPager = getActivity().findViewById(R.id.viewPager);
         submitButton = view.findViewById(R.id.btn_save);
+
         //sharedPref.edit().clear().apply();
         String change = this.getActivity().getIntent().getStringExtra("change");
         //gia metabasi kai diatirisi stoixeiwn
@@ -58,6 +59,7 @@ public class Info_UI extends Fragment {
                 write_to_pref(view);
             }
         });
+        fill_fields_with_prefs(view);
         if (flag!=1){
             swap_activity(read_from_pref());
         }
@@ -78,14 +80,13 @@ public class Info_UI extends Fragment {
         String lastname_text = lastname.getText().toString();
         String address_text = address.getText().toString();
 
-        sharedPref.edit().putString("key_first_name", firstname_text).apply();
-        sharedPref.edit().putString("key_last_name", lastname_text).apply();
-        sharedPref.edit().putString("key_address", address_text).apply();
+        sharedPref.edit().putString(key_first_name, firstname_text).apply();
+        sharedPref.edit().putString(key_last_name, lastname_text).apply();
+        sharedPref.edit().putString(key_address, address_text).apply();
 
 
         if (!(firstname_text.equals("") || lastname_text.equals("") || address_text.equals(""))) {
             Log.v("covid19", "no empty values");
-
             viewPager.setCurrentItem(1);
         } else {
             Log.v("covid19", "empty values");

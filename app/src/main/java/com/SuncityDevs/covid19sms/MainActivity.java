@@ -36,6 +36,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import org.json.JSONArray;
 
+import static com.SuncityDevs.covid19sms.Greece.Info_UI.flag;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
 
         GreeceAdapter adapter = new GreeceAdapter(getSupportFragmentManager());
+
         viewPager.setAdapter(adapter);
     }
 
