@@ -41,9 +41,9 @@ import static com.SuncityDevs.covid19sms.Greece.Info_UI.flag;
 
 public class MainActivity extends AppCompatActivity {
 
-    ViewPager viewPager;
+    LockableViewPager viewPager;
     private SharedPreferences sharedPref;
-
+    private View selectedView;
     private View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_tutorial_activity);
 
-        viewPager = findViewById(R.id.viewPager);
+        viewPager = findViewById(R.id.LockableViewPager);
+        viewPager.setSwipeable(false);
 
         GreeceAdapter adapter = new GreeceAdapter(getSupportFragmentManager());
 
@@ -59,8 +60,58 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void setSelectedItem(View view) {
 
+        if (this.selectedView == view && this.selectedView.isSelected() == true) {
+            view.findViewById(R.id.button).setEnabled(false);
+            view.findViewById(R.id.button).setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.colorPrimary)));
+            this.selectedView.setSelected(false);
+            return;
+        }
+
+        if (this.selectedView != null) {
+
+            this.selectedView.setSelected(false);
+
+        }
+
+        view.setSelected(true);
+        view.findViewById(R.id.button).setEnabled(true);
+        view.findViewById(R.id.button).setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.submitButton)));
+        this.selectedView = view;
     }
+        @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.bottom_menu, menu);
+        return true;
+    }
+        @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+            //Toast.makeText(MainActivity.this, "ASDAFA", Toast.LENGTH_SHORT).show();
+            showDialog();
+            return true;
+        }
+    public void showDialog() {
+        // custom dialog
+        final Dialog dialog = new Dialog(this, android.R.style.Theme_Light_NoTitleBar);
+        dialog.setContentView(R.layout.info_layout);
+        Button dialogButton = (Button) dialog.findViewById(R.id.info_close_button);
+        dialog.show();
+
+
+//        TextView t2 = dialog.findViewById(R.id.textView17);
+//        t2.setMovementMethod(LinkMovementMethod.getInstance());
+
+        // if button is clicked, close the custom dialog
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                dialog.dismiss();
+            }
+        });
+    }
+}
 
 
 

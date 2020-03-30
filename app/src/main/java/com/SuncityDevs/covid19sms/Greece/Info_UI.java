@@ -5,7 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Handler;
@@ -19,11 +23,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.SuncityDevs.covid19sms.LockableViewPager;
 import com.SuncityDevs.covid19sms.MainActivity;
 import com.SuncityDevs.covid19sms.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
+
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
+import java.util.List;
 
 
 public class Info_UI extends Fragment {
@@ -33,26 +42,27 @@ public class Info_UI extends Fragment {
     }
     SharedPreferences sharedPref;
     private View view;
-    private ViewPager viewPager;
+    private LockableViewPager viewPager;
     private FloatingActionButton submitButton;
     //private String flag = "com.example.covid19sms.address";
     public static int flag = 0;
-    private String key_first_name = "com.example.covid19sms.first_name";
-    private String key_last_name = "com.example.covid19sms.last_name";
-    private String key_address = "com.example.covid19sms.address";
+    private String key_first_name = "first_name";
+    private String key_last_name = "last_name";
+    private String key_address = "address";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         sharedPref = this.getActivity().getSharedPreferences(
                 "com.example.covid19sms", Context.MODE_PRIVATE);
         view =  inflater.inflate(R.layout.fragment_info_gr, container, false);
-        viewPager = getActivity().findViewById(R.id.viewPager);
+        viewPager = (LockableViewPager) getActivity().findViewById(R.id.LockableViewPager);
         submitButton = view.findViewById(R.id.btn_save);
 
         //sharedPref.edit().clear().apply();
         String change = this.getActivity().getIntent().getStringExtra("change");
         //gia metabasi kai diatirisi stoixeiwn
         fill_fields_with_prefs(view);
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +97,7 @@ public class Info_UI extends Fragment {
 
         if (!(firstname_text.equals("") || lastname_text.equals("") || address_text.equals(""))) {
             Log.v("covid19", "no empty values");
-            viewPager.setCurrentItem(1);
+            swap_activity(read_from_pref());
         } else {
             Log.v("covid19", "empty values");
 
@@ -128,6 +138,8 @@ public class Info_UI extends Fragment {
     public void swap_activity(String info) {
 
         if (info != null) {
+//            Bundle args = new Bundle();
+//            args.putString("person_info", info);
             viewPager.setCurrentItem(1);
         }
     }
@@ -155,21 +167,14 @@ public class Info_UI extends Fragment {
 
 
 
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (this.getActivity().getCurrentFocus() != null) {
-            InputMethodManager imm = (InputMethodManager) this.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(this.getActivity().getCurrentFocus().getWindowToken(), 0);
-        }
-        return super.getActivity().dispatchTouchEvent(ev);
-    }
-
-
-//    private void swap_activity(String info) {
-//
-//        if (info != null) {
-//            viewPager.setCurrentItem(1);
+//    public boolean dispatchTouchEvent(MotionEvent ev) {
+//        if (this.getActivity().getCurrentFocus() != null) {
+//            InputMethodManager imm = (InputMethodManager) this.getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+//            imm.hideSoftInputFromWindow(this.getActivity().getCurrentFocus().getWindowToken(), 0);
 //        }
-//
-//
+//        return super.getActivity().dispatchTouchEvent(ev);
 //    }
+
+
+
 }

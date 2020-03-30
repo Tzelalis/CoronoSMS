@@ -2,14 +2,18 @@ package com.SuncityDevs.covid19sms.Greece;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Bundle;
 import static com.SuncityDevs.covid19sms.Greece.Info_UI.flag;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,62 +24,65 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.SuncityDevs.covid19sms.Info_UI;
+import com.SuncityDevs.covid19sms.LockableViewPager;
 import com.SuncityDevs.covid19sms.R;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class MainActivity extends Fragment {
 
     public MainActivity() {
         // Required empty public constructor
     }
-
     private View selectedView;
     private Toast mToast = null;
     private String[] personalInfos;
-    ViewPager viewPager;
+    LockableViewPager viewPager;
+    SharedPreferences sharedPref;
     private View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view =  inflater.inflate(R.layout.activity_main_gr, container, false);
-        viewPager = getActivity().findViewById(R.id.viewPager);
+        viewPager = getActivity().findViewById(R.id.LockableViewPager);
+        sharedPref = getActivity().getSharedPreferences("com.example.covid19sms", Context.MODE_PRIVATE);
         floatingActionButton = view.findViewById(R.id.button);
         bottomAppBar = view.findViewById(R.id.bar);
         info_button  = view.findViewById(R.id.menuChangeInfo);
+        flag = 0;
+        String info = "";
+
+        info += sharedPref.getString("first_name", "");
+        info += " " + sharedPref.getString("last_name", "");
+        info += " " + sharedPref.getString("address", "");
+        final String test = info;
+        view.findViewById(R.id.button).setEnabled(false);
         ((com.SuncityDevs.covid19sms.MainActivity)getActivity()).setSupportActionBar(bottomAppBar);
         bottomAppBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewPager.setCurrentItem(0);
+                Toast.makeText(getContext(), test, Toast.LENGTH_LONG).show();
             }
         });
 
-        flag = 0;
-        personalInfos = new String[3];
 
-//        String info = this.getActivity().getIntent().getStringExtra("person_info");
-//
-//        view.findViewById(R.id.button).setEnabled(false);
-//
-//        info = info.replace("\"", "");
-//        info = info.replace("[", "");
-//        info = info.replace("]", "");
-//
-//        personalInfos = info.split(",");
-//
-//        //String s = parts[0] +" "+ parts[1]+" "+parts[2];
-//        //Log.v("covid19", parts[0] +" "+ parts[1]+" "+parts[2]);
-//        Toast.makeText(this.getActivity().getApplicationContext(), "s", Toast.LENGTH_SHORT).show();
+
+
+
+
+
+//        String s = parts[0] +" "+ parts[1]+" "+parts[2];
+//        Log.v("covid19", parts[0] +" "+ parts[1]+" "+parts[2]);
+      //  Toast.makeText(this.getActivity().getApplicationContext(), "s", Toast.LENGTH_SHORT).show();
 
 
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //setSelectedItem();
                 submitInfo(v);
             }
         });
