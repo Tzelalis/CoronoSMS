@@ -1,6 +1,5 @@
-package com.SuncityDevs.covid19sms;
+package com.SuncityDevs.covid19sms.Tutorial;
 
-import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.SuncityDevs.covid19sms.R;
 
 
 public class FirstFragment extends Fragment {

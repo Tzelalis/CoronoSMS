@@ -15,7 +15,7 @@
         >
 
         <activity
-            android:name=".Tutorial"
+            android:name=".Tutorial.Tutorial"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>

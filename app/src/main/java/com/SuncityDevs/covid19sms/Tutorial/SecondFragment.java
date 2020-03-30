@@ -1,4 +1,4 @@
-package com.SuncityDevs.covid19sms;
+package com.SuncityDevs.covid19sms.Tutorial;
 
 import android.os.Bundle;
 
@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.SuncityDevs.covid19sms.R;
 
 
 public class SecondFragment extends Fragment {

@@ -6,7 +6,7 @@
     android:background="@color/fragment_background"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ThirdFragment">
+    tools:context=".Tutorial.ThirdFragment">
 
     <ImageView
         android:id="@+id/imageView3"

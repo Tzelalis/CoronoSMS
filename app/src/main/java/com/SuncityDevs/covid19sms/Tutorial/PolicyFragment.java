@@ -1,4 +1,4 @@
-package com.SuncityDevs.covid19sms;
+package com.SuncityDevs.covid19sms.Tutorial;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.CheckBox;
+
+import com.SuncityDevs.covid19sms.R;
 
 
 public class PolicyFragment extends Fragment {

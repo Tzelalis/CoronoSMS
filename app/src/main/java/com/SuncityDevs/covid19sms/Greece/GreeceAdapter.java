@@ -1,4 +1,4 @@
-package com.SuncityDevs.covid19sms;
+package com.SuncityDevs.covid19sms.Greece;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

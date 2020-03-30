@@ -1,42 +1,17 @@
 package com.SuncityDevs.covid19sms;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.app.PendingIntent;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.telephony.SmsManager;
-import android.text.Html;
-import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.SuncityDevs.covid19sms.Greece.GreeceAdapter;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.viewpager.widget.ViewPager;
-
-import org.json.JSONArray;
-
-import static com.SuncityDevs.covid19sms.Greece.Info_UI.flag;
 
 
 public class MainActivity extends AppCompatActivity {

@@ -19,8 +19,7 @@
                 android:id="@+id/privacy_policy_textview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="10dp"
-                android:text="@string/test"/>
+                android:padding="10dp" />
         </LinearLayout>
     </ScrollView>
 
